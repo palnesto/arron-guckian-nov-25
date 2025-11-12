@@ -1,16 +1,19 @@
 {
-  "name": "nigecoin",
+  "name": "arron-guckian-nov-25",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev:local": "dotenv -e src/env/.env.local vite --host",
+    "dev:production": "dotenv -e src/env/.env.production vite",
+    "build:local": "dotenv -e /app/src/env/.env.local vite build",
+    "build:production": "dotenv -e /app/src/env/.env.production vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "prod": "vite build && vite preview"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
     "@headlessui/react": "^2.2.0",
     "@radix-ui/react-dialog": "^1.1.11",
     "@radix-ui/react-slot": "^1.2.0",
@@ -18,6 +21,7 @@
     "@tsparticles/engine": "^3.9.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
+    "@tanstack/react-query": "^5.90.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.16.0",
@@ -37,6 +41,7 @@
     "zustand": "^5.0.1"
   },
   "devDependencies": {
+    "dotenv-cli": "^8.0.0",
     "@eslint/js": "^9.13.0",
     "@types/node": "^22.9.3",
     "@types/react": "^18.3.12",
