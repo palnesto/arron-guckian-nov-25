@@ -95,3 +95,14 @@
     @apply font-sans antialiased;
   }
 }
+.text-radial-indigo {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #1355e9 40%,
+    #8a38f5 95% /* start purple later */
+  );
+  background-clip: text;
+  -webkit-background-clip: text; /* Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Safari */
+}

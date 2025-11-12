@@ -61,7 +61,28 @@
   width: 175%;
   filter: blur(50px);
 }
-
+@keyframes marquee-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@keyframes marquee-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.marquee-up {
+  animation: marquee-up var(--dur, 22s) linear infinite;
+}
+.marquee-down {
+  animation: marquee-down var(--dur, 22s) linear infinite;
+}
 .scrollbar-x::-webkit-scrollbar {
   display: none;
 }

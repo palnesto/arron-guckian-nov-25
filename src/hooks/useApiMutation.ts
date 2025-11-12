@@ -1,6 +1,6 @@
 import { useMutation, type UseMutationOptions } from "@tanstack/react-query";
 import apiInstance from "../api/queryClient";
-import { appToast } from "../utils/toast";
+import { appToast } from "../components/utils/toast";
 
 export const useApiMutation = <TData, TResponse>({
   route,
