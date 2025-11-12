@@ -20,6 +20,8 @@ export default {
         "heading-font": ["Benz Grotesk"],
         "body-font": ["Helvetica", "Arial", "sans-serif"],
         xenku: ["Xenku", "sans-serif"],
+        lufga: ["Lufga", "sans-serif"],
+        urbanist: ["Urbanist", "monospace"],
       },
       backgroundImage: {
         hero: "url('/hero.jpg')",

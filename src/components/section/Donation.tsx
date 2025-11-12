@@ -8,7 +8,7 @@ function DonationButton({ amount, onClick }: DonationButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="bg-white hover:bg-white/40 backdrop-blur-3xl bg-opacity-30 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+      className="bg-white hover:bg-white/40 backdrop-blur-3xl bg-opacity-30 text-white font-semibold px-8 py-5 rounded-2xl transition-colors w-full"
     >
       {amount}
     </button>
@@ -23,9 +23,9 @@ export function Support() {
   };
 
   return (
-    <section className="relative w-full my-40 md:my-12 px-4">
-      <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-        <div className="relative h-24 md:h-52 overflow-hidden -z-10">
+    <section className="relative w-full my-12 px-4">
+      <div className="relative overflow-hidden rounded-2xl shadow-2xl w-full">
+        <div className="relative h-32 md:h-52 overflow-hidden -z-10">
           <img
             src={support}
             alt="Rhode"
@@ -34,7 +34,7 @@ export function Support() {
         </div>
 
         <div className="bg-brown px-6 py-8 md:px-12 md:py-10 rounded-t-2xl -mt-6 z-10">
-          <div className="hidden md:flex md:gap-4 md:justify-center">
+          <div className="hidden md:flex md:gap-4 md:justify-center text-4xl">
             {donationAmounts.map((amount) => (
               <DonationButton
                 key={amount}
@@ -44,7 +44,7 @@ export function Support() {
             ))}
           </div>
 
-          <div className="grid grid-cols-2 gap-3 md:hidden">
+          <div className="grid grid-cols-2 gap-3 md:hidden text-xl">
             <DonationButton
               amount="$10"
               onClick={() => handleDonation("$10")}

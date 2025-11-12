@@ -1,4 +1,5 @@
-import { Facebook, Instagram } from "lucide-react";
+import fb from "../../assets/fb.png";
+import insta from "../../assets/insta.png";
 import { CommonButton } from "./CommonButton";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
@@ -13,7 +14,7 @@ export function Navbar() {
   return (
     <>
       <nav className="bg-white sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-2 md:p-7 lg:px-0 flex items-center justify-between h-32 lg:h-56">
+        <div className="px-2 md:p-7 xl:px-16 flex items-center justify-between h-32 lg:h-56">
           <div className="flex-shrink-0 h-28 lg:h-48">
             <img
               src={logo}
@@ -28,11 +29,11 @@ export function Navbar() {
               href={donateHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-32 md:w-52 md:py-7 md:text-xl"
+              className="md:py-7 md:text-xl"
             >
               <CommonButton
                 showArrow={false}
-                className="w-32 md:w-52 md:py-7 md:text-xl"
+                className="w-full md:py-9 md:text-xl xl:text-3xl"
               >
                 DONATE NOW
               </CommonButton>
@@ -41,27 +42,27 @@ export function Navbar() {
             <CommonButton
               showArrow={false}
               onClick={() => setOpen(true)}
-              className="w-28 md:w-40 md:py-7 md:text-xl"
+              className="w-full md:py-9 md:text-xl xl:text-3xl"
             >
               SIGN UP
             </CommonButton>
 
             {/* Social Media Icons - Desktop Only */}
-            <div className="hidden lg:flex items-center gap-3 ml-2">
+            <div className="hidden lg:flex items-center gap-5 ml-2">
               <a
                 href="#"
-                className="w-14 h-14 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="w-7 h-7 text-brown" />
+                <img src={fb} className="w-14 h-14" />
               </a>
               <a
                 href="#"
-                className="w-14 h-14 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="X (Twitter)"
               >
                 <svg
-                  className="w-7 h-7 text-brown"
+                  className="w-10 h-10 text-brown"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
@@ -71,10 +72,10 @@ export function Navbar() {
               </a>
               <a
                 href="#"
-                className="w-14 h-14 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-7 h-7 text-brown" />
+                <img src={insta} className="w-14 h-14" />
               </a>
             </div>
           </div>
