@@ -1,5 +1,5 @@
 export const endpoints = {
   healthCheck: "/health-check",
-  postEnquiry: "/public/signup",
-  joinMovement: "/public/join",
+  postSignup: "/forms/signup-form",
+  postJoinMovement: "/forms/join-movement-form",
 };

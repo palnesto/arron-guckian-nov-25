@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { CustomModal } from "./custom-modal";
+import { useApiMutation } from "../../hooks/useApiMutation";
+import { endpoints } from "../../api/endpoints";
 // optional: import { appToast } from "../utils/toast";
 
 type FormValues = {
@@ -38,11 +40,30 @@ export default function SignUpNowModal({
     mode: "onBlur",
   });
 
+  const { mutate, isPending } = useApiMutation<any, any>({
+    route: endpoints.postSignup,
+    method: "POST",
+    onSuccess: () => {
+      //  appToast.success("Submission successful! We'll be in touch soon.");
+      console.log("we'll get in touch soon");
+      onClose();
+    },
+  });
+
   const submit = async (data: FormValues) => {
+    const payload = {
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      phone: data.phone,
+      zip: data.zip,
+    };
+    mutate(payload);
     // hook to your API here
-    if (onSubmitApi) await onSubmitApi(data);
+    // if (onSubmitApi) await onSubmitApi(data);
     // appToast?.success?.("Thanks for signing up!");
-    reset();
+    // reset();
+    console.log("running reset", onSubmitApi, data);
     onClose();
   };
 

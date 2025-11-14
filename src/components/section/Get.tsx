@@ -1,15 +1,12 @@
-import { useState } from "react";
 import bg from "../../assets/get.png";
-import SignUpNowModal from "../modal/SignUpNowModal";
-import JoinMovementModal from "../modal/JoinMovementModal";
+import { useModal } from "../../store/modals";
 
 export default function Get({
   bgSrc = bg,
   title = "Get involved in the sea of change...",
   donateHref = "https://secure.winred.com/friends-of-aaron-guckian-0394772f/donate",
 }) {
-  const [openSignup, setOpenSignup] = useState(false);
-  const [openJoin, setOpenJoin] = useState(false);
+  const { setCurrModal } = useModal();
 
   return (
     <>
@@ -28,14 +25,14 @@ export default function Get({
 
             <div className="mt-6 flex flex-col gap-4 md:flex-row justify-between w-full text-2xl lg:text-4xl text-[#5e0b0b]">
               <button
-                onClick={() => setOpenSignup(true)}
+                onClick={() => setCurrModal("signup")}
                 className="rounded-full bg-white px-6 py-3 lg:py-5 lg:px-7 shadow-sm hover:shadow"
               >
                 SIGN UP NOW
               </button>
 
               <button
-                onClick={() => setOpenJoin(true)}
+                onClick={() => setCurrModal("join-movement")}
                 className="rounded-full bg-white px-6 py-3 lg:py-5 lg:px-7 shadow-sm hover:shadow"
               >
                 JOIN THE MOVEMENT
@@ -44,7 +41,7 @@ export default function Get({
               <a
                 href={donateHref}
                 target="_blank"
-                className="rounded-full bg-white px-6 py-3 lg:py-5 lg:px-7 shadow-sm hover:shadow"
+                className="rounded-full text-center bg-white px-6 py-3 lg:py-5 lg:px-7 shadow-sm hover:shadow"
               >
                 DONATE
               </a>
@@ -52,12 +49,6 @@ export default function Get({
           </div>
         </div>
       </section>
-
-      <SignUpNowModal
-        isOpen={openSignup}
-        onClose={() => setOpenSignup(false)}
-      />
-      <JoinMovementModal isOpen={openJoin} onClose={() => setOpenJoin(false)} />
     </>
   );
 }

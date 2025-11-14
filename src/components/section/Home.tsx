@@ -1,8 +1,15 @@
 import bg from "../../assets/herobg.png";
 import governor from "../../assets/governor.png";
 import { CommonButton } from "../common/CommonButton";
+import { useModal } from "../../store/modals";
+import { useApiQuery } from "../../hooks/useApiQuery";
+import { endpoints } from "../../api/endpoints";
 
 export default function Home() {
+  const { data } = useApiQuery(endpoints.healthCheck);
+  const { setCurrModal } = useModal();
+  console.log("data", data);
+
   return (
     <main className="py-5">
       <div className="hidden lg:flex lg:flex-row">
@@ -21,7 +28,10 @@ export default function Home() {
             </span>
           </h1>
 
-          <CommonButton className="text-2xl font-medium py-10 px-14">
+          <CommonButton
+            onClick={() => setCurrModal("join-movement")}
+            className="text-2xl font-medium py-10 px-14"
+          >
             JOIN THE MOVEMENT
           </CommonButton>
 
@@ -100,7 +110,12 @@ export default function Home() {
             Islander.
           </p>
 
-          <CommonButton className="text-xl"> JOIN THE MOVEMENT </CommonButton>
+          <CommonButton
+            onClick={() => setCurrModal("join-movement")}
+            className="text-xl"
+          >
+            JOIN THE MOVEMENT
+          </CommonButton>
         </div>
       </div>
     </main>

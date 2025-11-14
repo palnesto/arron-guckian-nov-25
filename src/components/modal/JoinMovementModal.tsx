@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { CustomModal } from "./custom-modal";
+import { endpoints } from "../../api/endpoints";
+import { useApiMutation } from "../../hooks/useApiMutation";
 
 export default function JoinMovementModal({
   isOpen,
@@ -12,6 +14,15 @@ export default function JoinMovementModal({
   onClose: () => void;
   onSubmitApi?: (data: FormValues) => Promise<void> | void;
 }) {
+  const { mutate, isPending } = useApiMutation<any, any>({
+    route: endpoints.postJoinMovement,
+    method: "POST",
+    onSuccess: () => {
+      //  appToast.success("Submission successful! We'll be in touch soon.");
+      console.log("we'll get in touch soon");
+      onClose();
+    },
+  });
   const {
     register,
     handleSubmit,
@@ -30,8 +41,17 @@ export default function JoinMovementModal({
   });
 
   async function submit(data: FormValues) {
-    if (onSubmitApi) await onSubmitApi(data);
-    reset();
+    // if (onSubmitApi) await onSubmitApi(data);
+    const payload = {
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      phone: data.phone,
+      zip: data.zip,
+      interests: data.interests,
+    };
+    mutate(payload);
+    // reset();
     onClose();
   }
 

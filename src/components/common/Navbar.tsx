@@ -4,9 +4,11 @@ import { CommonButton } from "./CommonButton";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
 import SignUpNowModal from "../modal/SignUpNowModal";
+import { useModal } from "../../store/modals";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { setCurrModal } = useModal();
 
   const donateHref =
     "https://secure.winred.com/friends-of-aaron-guckian-0394772f/donate";
@@ -41,7 +43,7 @@ export function Navbar() {
 
             <CommonButton
               showArrow={false}
-              onClick={() => setOpen(true)}
+              onClick={() => setCurrModal("signup")}
               className="w-full md:py-9 md:text-xl xl:text-3xl"
             >
               SIGN UP
@@ -81,7 +83,6 @@ export function Navbar() {
           </div>
         </div>
       </nav>
-      <SignUpNowModal isOpen={open} onClose={() => setOpen(false)} />
     </>
   );
 }
