@@ -175,8 +175,8 @@ import { CustomModal } from "./custom-modal";
 import { endpoints } from "../../api/endpoints";
 import { useApiMutation } from "../../hooks/useApiMutation";
 
-// 🔹 Add your success image here
-import successImage from "../../assets/success.png"; // <-- change path/name as needed
+// 👇 add your success image
+import successImage from "../../assets/success.png"; // change path if needed
 
 export default function JoinMovementModal({
   isOpen,
@@ -187,7 +187,6 @@ export default function JoinMovementModal({
   onClose: () => void;
   onSubmitApi?: (data: FormValues) => Promise<void> | void;
 }) {
-  // 🔹 NEW: state for image popup
   const [showSuccessImage, setShowSuccessImage] = useState(false);
 
   const {
@@ -212,9 +211,9 @@ export default function JoinMovementModal({
     method: "POST",
     onSuccess: () => {
       console.log("we'll get in touch soon");
-      reset(); // optional: clear form
-      onClose(); // 🔹 1) close main modal
-      setShowSuccessImage(true); // 🔹 2) then show popup image
+      reset();
+      // ❗ don't call onClose here
+      setShowSuccessImage(true); // switch to image mode
     },
   });
 
@@ -228,32 +227,53 @@ export default function JoinMovementModal({
       interests: data.interests,
     };
 
-    // if (onSubmitApi) await onSubmitApi(data); // keep commented if you don't need it
+    // if (onSubmitApi) await onSubmitApi(data);
 
     mutate(payload);
-
-    // ❌ don't close modal here; it's handled in onSuccess above
-    // onClose();
   }
 
-  // 🔹 click anywhere on image overlay to close it
+  // when user clicks the success image
   const handleSuccessImageClick = () => {
     setShowSuccessImage(false);
+    onClose(); // now actually close the modal
   };
 
   return (
-    <>
-      <CustomModal
-        isOpen={isOpen}
-        onClose={onClose}
-        title="Join the Movement"
-        onSubmit={handleSubmit(submit)}
-        submitButtonText="Join now"
-        submitButtonClass="bg-[#6b0d0d] text-white rounded-full px-6"
-        needX
-        isSubmitting={isSubmitting || isPending}
-        contentContainerClass="w-full bg-white h-[90vh] overflow-y-auto"
-      >
+    <CustomModal
+      isOpen={isOpen}
+      // if in success mode, close both image + modal
+      onClose={() => {
+        if (showSuccessImage) {
+          setShowSuccessImage(false);
+        }
+        onClose();
+      }}
+      title={showSuccessImage ? "" : "Join the Movement"}
+      onSubmit={handleSubmit(submit)}
+      submitButtonText="Join now"
+      submitButtonClass="bg-[#6b0d0d] text-white rounded-full px-6"
+      // hide X when in image mode
+      needX={!showSuccessImage}
+      // disable button during submit; no button in image mode anyway
+      isSubmitting={isSubmitting || isPending}
+      contentContainerClass="w-full bg-white h-[90vh] overflow-y-auto"
+      // hide footer (buttons) when showing image
+      footer={showSuccessImage ? null : undefined}
+    >
+      {showSuccessImage ? (
+        // 🔥 Success image “popup” content
+        <div
+          className="flex items-center justify-center h-[70vh] cursor-pointer"
+          onClick={handleSuccessImageClick}
+        >
+          <img
+            src={successImage}
+            alt="Thank you for joining"
+            className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
+          />
+        </div>
+      ) : (
+        // 🧾 Your original form
         <form onSubmit={(e) => e.preventDefault()} className="space-y-6 pt-2">
           {/* Name / Email / Phone / Zip */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -348,22 +368,8 @@ export default function JoinMovementModal({
             </div>
           </div>
         </form>
-      </CustomModal>
-
-      {/* 🔹 Success image popup after modal closes */}
-      {showSuccessImage && (
-        <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
-          onClick={handleSuccessImageClick}
-        >
-          <img
-            src={successImage}
-            alt="Thank you for joining"
-            className="max-w-[90vw] max-h-[90vh] cursor-pointer rounded-xl shadow-2xl"
-          />
-        </div>
       )}
-    </>
+    </CustomModal>
   );
 }
 
