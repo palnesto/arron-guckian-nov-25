@@ -20,10 +20,10 @@ export default function Home() {
           </p> */}
 
           <h1 className="pb-10 font-semibold">
-            <span className="block text-[45px] 2xl:text-[60px]  text-brown leading-tight">
+            <span className="block text-[45px] 2xl:text-[80px]  text-nowrap text-brown leading-tight">
               Rhode Island...
             </span>
-            <span className="block text-[45px] 2xl:text-[55px] text-nowrap text-blue leading-tight">
+            <span className="block text-[45px] 2xl:text-[65px] text-nowrap text-blue leading-tight">
               It's time to THINK BIG
             </span>
           </h1>

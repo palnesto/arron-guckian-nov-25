@@ -17,7 +17,7 @@ export function Footer() {
         {/* Contact Info */}
         <div className="space-y-2">
           {/* <p>(401)952-5764</p> */}
-          <a href="mailto:info@aaronforri.com" className="underline block">
+          <a href="mailto:info@aaronforri.com" className="block">
             info@aaronforri.com
           </a>
           <p>POBox 308</p>
@@ -27,9 +27,9 @@ export function Footer() {
         {/* Press/Media Contact */}
         <div className="space-y-2">
           <p className="text-2xl font-bold">PRESS/MEDIA Contact</p>
-          <p>Patrick J Sweeney</p>
+
           {/* <p>(941) 935-6108</p> */}
-          <a href="mailto:press@aaronforri.com" className="underline block">
+          <a href="mailto:press@aaronforri.com" className="block">
             press@aaronforri.com
           </a>
         </div>
@@ -69,8 +69,8 @@ export function Footer() {
         </div>
 
         {/* Footer Text */}
-        <div className="space-y-4">
-          <p className=" bg-white text-brown p-4 font-medium">
+        <div className="space-y-4 p-2">
+          <p className=" border-2 border-white rounded-full font-lufga p-4 font-medium">
             Paid for and approved by the friends of Aaron Guckian.
           </p>
           <p className="text-base">Copyright © 2025</p>
@@ -85,7 +85,7 @@ export function Footer() {
         <div className="flex justify-around w-full place-items-end mb-12">
           <div className="space-y-2 text-left">
             {/* <p>(401)952-5764</p> */}
-            <a href="mailto:info@aaronforri.com" className="tunderline block">
+            <a href="mailto:info@aaronforri.com" className="block">
               info@aaronforri.com
             </a>
             <p>POBox 308</p>
@@ -94,9 +94,9 @@ export function Footer() {
 
           <div className="space-y-2 text-right">
             <p className=" font-bold">PRESS/MEDIA Contact</p>
-            <p>Patrick J Sweeney</p>
+
             {/* <p>(941) 935-6108</p> */}
-            <a href="mailto:press@aaronforri.com" className="underline block">
+            <a href="mailto:press@aaronforri.com" className="block">
               press@aaronforri.com
             </a>
           </div>
@@ -138,7 +138,7 @@ export function Footer() {
 
         {/* Footer Text */}
         <div className="text-center space-y-2">
-          <p className="bg-white text-brown p-4 rounded-full font-lufga font-medium text-2xl">
+          <p className="border-2 border-white p-4 rounded-full font-lufga font-medium text-2xl">
             Paid for and approved by the friends of Aaron Guckian.
           </p>
           <p className="text-2xl">Copyright © 2025</p>

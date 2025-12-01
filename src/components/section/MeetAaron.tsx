@@ -21,7 +21,7 @@ import m20 from "../../assets/marquee/m20.jpeg";
 import m21 from "../../assets/marquee/m21.jpeg";
 import m22 from "../../assets/marquee/m22.jpeg";
 import { CommonButton } from "../common/CommonButton";
-import governor from "../../assets/aaron.png";
+import governor from "../../assets/governor.png";
 import { useState } from "react";
 // import m23 from "../../assets/marquee/m23.jpeg";
 // import m24 from "../../assets/marquee/m2";
@@ -166,8 +166,14 @@ export default function MeetAaron({ images = defaultImages }) {
       </div>
 
       {openPopup && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-xl max-w-4xl w-full relative shadow-xl overflow-hidden">
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4"
+          onClick={() => setOpenPopup(null)} // ⬅️ click anywhere on overlay closes
+        >
+          <div
+            className="bg-white rounded-xl max-w-4xl w-full relative shadow-xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()} // ⬅️ prevent closing when clicking inside box
+          >
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 rounded-full bg-brown text-white w-8 h-8 flex items-center justify-center"
