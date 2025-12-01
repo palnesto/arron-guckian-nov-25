@@ -175,8 +175,8 @@ import { CustomModal } from "./custom-modal";
 import { endpoints } from "../../api/endpoints";
 import { useApiMutation } from "../../hooks/useApiMutation";
 
-// ⬇️ import your success image
-import successImage from "../../assets/success.png"; // change path/name as needed
+// 🔹 Add your success image here
+import successImage from "../../assets/success.png"; // <-- change path/name as needed
 
 export default function JoinMovementModal({
   isOpen,
@@ -187,6 +187,7 @@ export default function JoinMovementModal({
   onClose: () => void;
   onSubmitApi?: (data: FormValues) => Promise<void> | void;
 }) {
+  // 🔹 NEW: state for image popup
   const [showSuccessImage, setShowSuccessImage] = useState(false);
 
   const {
@@ -209,11 +210,11 @@ export default function JoinMovementModal({
   const { mutate, isPending } = useApiMutation<any, any>({
     route: endpoints.postJoinMovement,
     method: "POST",
-    onSuccess: async () => {
+    onSuccess: () => {
       console.log("we'll get in touch soon");
-      reset();
-      // show image popup instead of closing immediately
-      setShowSuccessImage(true);
+      reset(); // optional: clear form
+      onClose(); // 🔹 1) close main modal
+      setShowSuccessImage(true); // 🔹 2) then show popup image
     },
   });
 
@@ -227,19 +228,17 @@ export default function JoinMovementModal({
       interests: data.interests,
     };
 
-    // optional external handler
-    if (onSubmitApi) {
-      await onSubmitApi(data);
-    }
+    // if (onSubmitApi) await onSubmitApi(data); // keep commented if you don't need it
 
     mutate(payload);
-    // ❌ don't close here, we want to show success image first
+
+    // ❌ don't close modal here; it's handled in onSuccess above
     // onClose();
   }
 
+  // 🔹 click anywhere on image overlay to close it
   const handleSuccessImageClick = () => {
     setShowSuccessImage(false);
-    onClose(); // finally close the modal after user clicks the image
   };
 
   return (
@@ -351,7 +350,7 @@ export default function JoinMovementModal({
         </form>
       </CustomModal>
 
-      {/* ✅ Success Image Popup */}
+      {/* 🔹 Success image popup after modal closes */}
       {showSuccessImage && (
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
