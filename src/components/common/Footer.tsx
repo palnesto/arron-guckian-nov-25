@@ -37,7 +37,7 @@ export function Footer() {
         {/* Social Media Icons */}
         <div className="flex gap-6">
           <a
-            href="http://facebook.com/AaronGuckianForLtGovernor/mentions/?_rdr"
+            href="https://www.facebook.com/AaronGuckianForLtGovernor"
             target="_blank"
             className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Facebook"
@@ -85,8 +85,8 @@ export function Footer() {
         <div className="flex justify-around w-full place-items-end mb-12">
           <div className="space-y-2 text-left">
             {/* <p>(401)952-5764</p> */}
-            <a href="mailto:Aaron@AaronforRI.com" className="tunderline block">
-              Aaron@AaronforRI.com
+            <a href="mailto:info@aaronforri.com" className="tunderline block">
+              info@aaronforri.com
             </a>
             <p>POBox 308</p>
             <p>East Greenwich, Rhode Island 02818</p>
@@ -105,7 +105,7 @@ export function Footer() {
         {/* Social Media Icons */}
         <div className="flex justify-center gap-6">
           <a
-            href="http://facebook.com/AaronGuckianForLtGovernor/mentions/?_rdr"
+            href="https://www.facebook.com/AaronGuckianForLtGovernor"
             target="_blank"
             className="h-20 w-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Facebook"

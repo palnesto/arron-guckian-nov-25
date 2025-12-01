@@ -34,8 +34,8 @@ export function FivePillars() {
       <div className="mx-auto max-w-full grid gap-10 lg:gap-32 lg:grid-cols-[1.1fr,2fr] px-4 xl:px-10 2xl:px-32 ">
         {/* LEFT: Pillar + big 5 */}
         <div className="flex flex-col items-center space-y-2">
-          <h2 className="text-3xl md:text-[40px] 2xl:text-[45px] text-[#0D0D0D] font-extrabold">
-            The Five Pillars
+          <h2 className="text-3xl md:text-[40px] 2xl:text-[45px] text-[#0D0D0D] font-extrabold text-nowrap">
+            Our Five Core Pillars
           </h2>
           <p className="lg:hidden text-xl md:text-2xl text-center font-bold text-[#B60000]">
             Our roadmap is clear. Here’s how we’ll get there.
@@ -90,7 +90,7 @@ export function FivePillars() {
           </div>
         </div>
       </div>
-      <section className="text-center font-lufga text-2xl md:text-3xl pt-32 max-w-7xl mx-auto px-1">
+      <section className="text-center font-lufga text-2xl md:text-3xl pt-20 max-w-7xl mx-auto px-1">
         <b>
           “Together, we can build a future where people can afford to live,
           work, and raise a family,”

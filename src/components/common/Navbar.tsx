@@ -1,13 +1,9 @@
 import fb from "../../assets/fb.png";
-import insta from "../../assets/insta.png";
 import { CommonButton } from "./CommonButton";
 import logo from "../../assets/logo.png";
-import { useState } from "react";
-import SignUpNowModal from "../modal/SignUpNowModal";
 import { useModal } from "../../store/modals";
 
 export function Navbar() {
-  const [open, setOpen] = useState(false);
   const { setCurrModal } = useModal();
 
   const donateHref =
@@ -16,7 +12,7 @@ export function Navbar() {
   return (
     <>
       <nav className="bg-white sticky top-0 z-50">
-        <div className="px-2 md:p-7 xl:px-16 flex items-center justify-between h-32 lg:h-56">
+        <div className="px-1 md:p-7 xl:px-16 flex items-center justify-between h-32 lg:h-56">
           <div className="flex-shrink-0 h-28 lg:h-48">
             <img
               src={logo}
@@ -31,11 +27,11 @@ export function Navbar() {
               href={donateHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="md:py-7 md:text-xl"
+              className="md:py-7 w-full"
             >
               <CommonButton
                 showArrow={false}
-                className="w-full md:py-9 md:text-xl xl:text-3xl"
+                className="w-full px-3 md:px-5 md:py-9 md:text-xl xl:text-2xl"
               >
                 DONATE NOW
               </CommonButton>
@@ -43,16 +39,16 @@ export function Navbar() {
 
             <CommonButton
               showArrow={false}
-              onClick={() => setCurrModal("signup")}
-              className="w-full md:py-9 md:text-xl xl:text-3xl"
+              onClick={() => setCurrModal("join-movement")}
+              className="w-full px-3 md:px-5 md:py-9 md:text-xl xl:text-2xl"
             >
-              SIGN UP
+              JOIN THE MOVEMENT
             </CommonButton>
 
             {/* Social Media Icons - Desktop Only */}
             <div className="hidden lg:flex items-center gap-5 ml-2">
               <a
-                href="http://facebook.com/AaronGuckianForLtGovernor/mentions/?_rdr"
+                href="https://www.facebook.com/AaronGuckianForLtGovernor"
                 target="_blank"
                 className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="Facebook"

@@ -57,7 +57,7 @@ export const CustomModal = ({
             <p>
               {needX && (
                 <div
-                  className="hover:bg-white/10 cursor-pointer rounded-sm p-1 duration-150"
+                  className="hover:bg-brown/80 bg-brown text-white rounded-full cursor-pointer p-1 duration-150"
                   onClick={onClose}
                 >
                   <X size={20} />

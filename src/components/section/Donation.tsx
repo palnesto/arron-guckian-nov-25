@@ -16,13 +16,17 @@ function DonationButton({ amount, onClick }: DonationButtonProps) {
   );
 }
 
+const DONATE_URL =
+  "https://secure.winred.com/friends-of-aaron-guckian-0394772f/donate";
+
 export function Support() {
   const donationAmounts = ["$10", "$25", "$50", "$100", "Other"];
 
   const handleDonation = (amount: string) => {
-    console.log(`Donation clicked: ${amount}`);
+    if (typeof window !== "undefined") {
+      window.open(DONATE_URL, "_blank", "noopener,noreferrer");
+    }
   };
-
   return (
     <section className="relative w-full my-12 px-4">
       <div className="relative overflow-hidden rounded-2xl shadow-2xl w-full">

@@ -1,9 +1,182 @@
+// import { useForm } from "react-hook-form";
+// import { Label } from "../ui/label";
+// import { Input } from "../ui/input";
+// import { CustomModal } from "./custom-modal";
+// import { endpoints } from "../../api/endpoints";
+// import { useApiMutation } from "../../hooks/useApiMutation";
+
+// export default function JoinMovementModal({
+//   isOpen,
+//   onClose,
+//   onSubmitApi,
+// }: {
+//   isOpen: boolean;
+//   onClose: () => void;
+//   onSubmitApi?: (data: FormValues) => Promise<void> | void;
+// }) {
+//   const { mutate, isPending } = useApiMutation<any, any>({
+//     route: endpoints.postJoinMovement,
+//     method: "POST",
+//     onSuccess: () => {
+//       //  appToast.success("Submission successful! We'll be in touch soon.");
+//       console.log("we'll get in touch soon");
+//       onClose();
+//     },
+//   });
+//   const {
+//     register,
+//     handleSubmit,
+//     reset,
+//     formState: { errors, isSubmitting },
+//   } = useForm<FormValues>({
+//     defaultValues: {
+//       firstName: "",
+//       lastName: "",
+//       email: "",
+//       phone: "",
+//       zip: "",
+//       interests: [],
+//     },
+//     mode: "onBlur",
+//   });
+
+//   async function submit(data: FormValues) {
+//     // if (onSubmitApi) await onSubmitApi(data);
+//     const payload = {
+//       email: data.email,
+//       firstName: data.firstName,
+//       lastName: data.lastName,
+//       phone: data.phone,
+//       zip: data.zip,
+//       interests: data.interests,
+//     };
+//     mutate(payload);
+//     // reset();
+//     onClose();
+//   }
+
+//   return (
+//     <CustomModal
+//       isOpen={isOpen}
+//       onClose={onClose}
+//       title="Join the Movement"
+//       onSubmit={handleSubmit(submit)}
+//       submitButtonText="Join now"
+//       submitButtonClass="bg-[#6b0d0d] text-white rounded-full px-6"
+//       needX
+//       isSubmitting={isSubmitting}
+//       contentContainerClass="w-full bg-white h-[90vh] overflow-y-auto"
+//     >
+//       <form onSubmit={(e) => e.preventDefault()} className="space-y-6 pt-2">
+//         {/* Name / Email / Phone / Zip */}
+//         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+//           <div className="flex flex-col gap-2">
+//             <Label htmlFor="firstName" className="text-lg">
+//               First name
+//             </Label>
+//             <Input
+//               id="firstName"
+//               placeholder="First name"
+//               {...register("firstName", { required: "Required" })}
+//             />
+//             {errors.firstName && (
+//               <p className="text-sm text-red-600">{errors.firstName.message}</p>
+//             )}
+//           </div>
+
+//           <div className="flex flex-col gap-2">
+//             <Label htmlFor="lastName" className="text-lg">
+//               Second name
+//             </Label>
+//             <Input
+//               id="lastName"
+//               placeholder="Second name"
+//               {...register("lastName", { required: "Required" })}
+//             />
+//             {errors.lastName && (
+//               <p className="text-sm text-red-600">{errors.lastName.message}</p>
+//             )}
+//           </div>
+
+//           <div className="flex flex-col gap-2">
+//             <Label htmlFor="email" className="text-lg">
+//               Email
+//             </Label>
+//             <Input
+//               id="email"
+//               type="email"
+//               placeholder="Sample@email.com"
+//               {...register("email", { required: "Email is required" })}
+//             />
+//             {errors.email && (
+//               <p className="text-sm text-red-600">{errors.email.message}</p>
+//             )}
+//           </div>
+
+//           <div className="flex flex-col gap-2">
+//             <Label htmlFor="phone" className="text-lg">
+//               Phone
+//             </Label>
+//             <Input id="phone" placeholder="+1" {...register("phone")} />
+//           </div>
+
+//           <div className="flex flex-col gap-2 md:col-span-2">
+//             <Label htmlFor="zip" className="text-lg">
+//               Zip code
+//             </Label>
+//             <Input id="zip" placeholder="02800" {...register("zip")} />
+//           </div>
+//         </div>
+
+//         {/* Volunteer Interest checkboxes */}
+//         <div className="space-y-3">
+//           <Label className="text-lg font-semibold">Check all that apply:</Label>
+//           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+//             {[
+//               "Door to door",
+//               "Sign duty",
+//               "Digital media",
+//               "Photography / Video",
+//               "Host a house party or event",
+//               "Make phone calls",
+//               "Event duty",
+//               "Other",
+//             ].map((item) => (
+//               <label key={item} className="flex items-center gap-3">
+//                 <input
+//                   type="checkbox"
+//                   value={item}
+//                   {...register("interests")}
+//                   className="h-4 w-4 accent-[#6b0d0d]"
+//                 />
+//                 <span className="text-sm text-gray-700">{item}</span>
+//               </label>
+//             ))}
+//           </div>
+//         </div>
+//       </form>
+//     </CustomModal>
+//   );
+// }
+
+// type FormValues = {
+//   firstName: string;
+//   lastName: string;
+//   email: string;
+//   phone?: string;
+//   zip: string;
+//   interests: string[];
+// };
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { CustomModal } from "./custom-modal";
 import { endpoints } from "../../api/endpoints";
 import { useApiMutation } from "../../hooks/useApiMutation";
+
+// ⬇️ import your success image
+import successImage from "../../assets/success.png"; // change path/name as needed
 
 export default function JoinMovementModal({
   isOpen,
@@ -14,15 +187,8 @@ export default function JoinMovementModal({
   onClose: () => void;
   onSubmitApi?: (data: FormValues) => Promise<void> | void;
 }) {
-  const { mutate, isPending } = useApiMutation<any, any>({
-    route: endpoints.postJoinMovement,
-    method: "POST",
-    onSuccess: () => {
-      //  appToast.success("Submission successful! We'll be in touch soon.");
-      console.log("we'll get in touch soon");
-      onClose();
-    },
-  });
+  const [showSuccessImage, setShowSuccessImage] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -40,8 +206,18 @@ export default function JoinMovementModal({
     mode: "onBlur",
   });
 
+  const { mutate, isPending } = useApiMutation<any, any>({
+    route: endpoints.postJoinMovement,
+    method: "POST",
+    onSuccess: async () => {
+      console.log("we'll get in touch soon");
+      reset();
+      // show image popup instead of closing immediately
+      setShowSuccessImage(true);
+    },
+  });
+
   async function submit(data: FormValues) {
-    // if (onSubmitApi) await onSubmitApi(data);
     const payload = {
       email: data.email,
       firstName: data.firstName,
@@ -50,112 +226,145 @@ export default function JoinMovementModal({
       zip: data.zip,
       interests: data.interests,
     };
+
+    // optional external handler
+    if (onSubmitApi) {
+      await onSubmitApi(data);
+    }
+
     mutate(payload);
-    // reset();
-    onClose();
+    // ❌ don't close here, we want to show success image first
+    // onClose();
   }
 
+  const handleSuccessImageClick = () => {
+    setShowSuccessImage(false);
+    onClose(); // finally close the modal after user clicks the image
+  };
+
   return (
-    <CustomModal
-      isOpen={isOpen}
-      onClose={onClose}
-      title="Join the Movement"
-      onSubmit={handleSubmit(submit)}
-      submitButtonText="Join now"
-      submitButtonClass="bg-[#6b0d0d] text-white rounded-full px-6"
-      needX
-      isSubmitting={isSubmitting}
-      contentContainerClass="w-full bg-white h-[90vh] overflow-y-auto"
-    >
-      <form onSubmit={(e) => e.preventDefault()} className="space-y-6 pt-2">
-        {/* Name / Email / Phone / Zip */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="firstName" className="text-lg">
-              First name
-            </Label>
-            <Input
-              id="firstName"
-              placeholder="First name"
-              {...register("firstName", { required: "Required" })}
-            />
-            {errors.firstName && (
-              <p className="text-sm text-red-600">{errors.firstName.message}</p>
-            )}
+    <>
+      <CustomModal
+        isOpen={isOpen}
+        onClose={onClose}
+        title="Join the Movement"
+        onSubmit={handleSubmit(submit)}
+        submitButtonText="Join now"
+        submitButtonClass="bg-[#6b0d0d] text-white rounded-full px-6"
+        needX
+        isSubmitting={isSubmitting || isPending}
+        contentContainerClass="w-full bg-white h-[90vh] overflow-y-auto"
+      >
+        <form onSubmit={(e) => e.preventDefault()} className="space-y-6 pt-2">
+          {/* Name / Email / Phone / Zip */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="firstName" className="text-lg">
+                First name
+              </Label>
+              <Input
+                id="firstName"
+                placeholder="First name"
+                {...register("firstName", { required: "Required" })}
+              />
+              {errors.firstName && (
+                <p className="text-sm text-red-600">
+                  {errors.firstName.message}
+                </p>
+              )}
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="lastName" className="text-lg">
+                Second name
+              </Label>
+              <Input
+                id="lastName"
+                placeholder="Second name"
+                {...register("lastName", { required: "Required" })}
+              />
+              {errors.lastName && (
+                <p className="text-sm text-red-600">
+                  {errors.lastName.message}
+                </p>
+              )}
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="email" className="text-lg">
+                Email
+              </Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Sample@email.com"
+                {...register("email", { required: "Email is required" })}
+              />
+              {errors.email && (
+                <p className="text-sm text-red-600">{errors.email.message}</p>
+              )}
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="phone" className="text-lg">
+                Phone
+              </Label>
+              <Input id="phone" placeholder="+1" {...register("phone")} />
+            </div>
+
+            <div className="flex flex-col gap-2 md:col-span-2">
+              <Label htmlFor="zip" className="text-lg">
+                Zip code
+              </Label>
+              <Input id="zip" placeholder="02800" {...register("zip")} />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="lastName" className="text-lg">
-              Second name
+          {/* Volunteer Interest checkboxes */}
+          <div className="space-y-3">
+            <Label className="text-lg font-semibold">
+              Check all that apply:
             </Label>
-            <Input
-              id="lastName"
-              placeholder="Second name"
-              {...register("lastName", { required: "Required" })}
-            />
-            {errors.lastName && (
-              <p className="text-sm text-red-600">{errors.lastName.message}</p>
-            )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+              {[
+                "Door to door",
+                "Sign duty",
+                "Digital media",
+                "Photography / Video",
+                "Host a house party or event",
+                "Make phone calls",
+                "Event duty",
+                "Other",
+              ].map((item) => (
+                <label key={item} className="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    value={item}
+                    {...register("interests")}
+                    className="h-4 w-4 accent-[#6b0d0d]"
+                  />
+                  <span className="text-sm text-gray-700">{item}</span>
+                </label>
+              ))}
+            </div>
           </div>
+        </form>
+      </CustomModal>
 
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="email" className="text-lg">
-              Email
-            </Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="Sample@email.com"
-              {...register("email", { required: "Email is required" })}
-            />
-            {errors.email && (
-              <p className="text-sm text-red-600">{errors.email.message}</p>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="phone" className="text-lg">
-              Phone
-            </Label>
-            <Input id="phone" placeholder="+1" {...register("phone")} />
-          </div>
-
-          <div className="flex flex-col gap-2 md:col-span-2">
-            <Label htmlFor="zip" className="text-lg">
-              Zip code
-            </Label>
-            <Input id="zip" placeholder="02800" {...register("zip")} />
-          </div>
+      {/* ✅ Success Image Popup */}
+      {showSuccessImage && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
+          onClick={handleSuccessImageClick}
+        >
+          <img
+            src={successImage}
+            alt="Thank you for joining"
+            className="max-w-[90vw] max-h-[90vh] cursor-pointer rounded-xl shadow-2xl"
+          />
         </div>
-
-        {/* Volunteer Interest checkboxes */}
-        <div className="space-y-3">
-          <Label className="text-lg font-semibold">Check all that apply:</Label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
-            {[
-              "Door to door",
-              "Sign duty",
-              "Digital media",
-              "Photography / Video",
-              "Host a house party or event",
-              "Make phone calls",
-              "Event duty",
-              "Other",
-            ].map((item) => (
-              <label key={item} className="flex items-center gap-3">
-                <input
-                  type="checkbox"
-                  value={item}
-                  {...register("interests")}
-                  className="h-4 w-4 accent-[#6b0d0d]"
-                />
-                <span className="text-sm text-gray-700">{item}</span>
-              </label>
-            ))}
-          </div>
-        </div>
-      </form>
-    </CustomModal>
+      )}
+    </>
   );
 }
 
