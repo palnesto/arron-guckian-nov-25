@@ -11,9 +11,9 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="bg-white sticky top-0 z-50">
+      <nav className="bg-white sticky top-0 z-50 left-0 right-0">
         <div className="px-1 md:p-7 xl:px-16 flex items-center justify-between h-32 lg:h-56">
-          <div className="flex-shrink-0 h-28 lg:h-48">
+          <div className="h-28 lg:h-48">
             <img
               src={logo}
               alt="Aaron Guckian for Governor"
