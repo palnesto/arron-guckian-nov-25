@@ -50,7 +50,10 @@ export function ApplicationLayout({ children }: { children: ReactNode }) {
       )}
 
       {isImageModalOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60">
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
+          onClick={closeImgModal}
+        >
           <img
             src={successImage}
             alt="Thank you for joining"
