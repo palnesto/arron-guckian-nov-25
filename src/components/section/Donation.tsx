@@ -1,4 +1,5 @@
 import support from "../../assets/support.png";
+import msupport from "../../assets/msupport.png";
 interface DonationButtonProps {
   amount: string;
   onClick?: () => void;
@@ -25,15 +26,21 @@ export function Support() {
   return (
     <section className="relative w-full my-12 px-4">
       <div className="relative overflow-hidden rounded-2xl shadow-2xl w-full">
-        <div className="relative h-32 md:h-52 overflow-hidden -z-10">
+        <div className="lg:hidden relative h-40 md:h-52 overflow-hidden -z-10">
+          <img
+            src={msupport}
+            alt="Rhode"
+            className="w-full h-full md:object-fill"
+          />
+        </div>
+        <div className="hidden lg:block relative h-40 md:h-52 overflow-hidden -z-10">
           <img
             src={support}
             alt="Rhode"
-            className="w-full h-full md:object-cover md:object-top"
+            className="w-full h-full object-cover md:object-cover md:object-top"
           />
         </div>
-
-        <div className="bg-brown px-6 py-8 md:px-12 md:py-10 rounded-t-2xl -mt-6 z-10">
+        <div className="bg-brown px-6 py-8 md:px-12 md:py-10 rounded-t-2xl -mt-16 md:-mt-6 z-10">
           <div className="hidden md:flex md:gap-4 md:justify-center text-4xl">
             {donationAmounts.map((amount) => (
               <DonationButton

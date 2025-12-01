@@ -52,14 +52,16 @@ export function Navbar() {
             {/* Social Media Icons - Desktop Only */}
             <div className="hidden lg:flex items-center gap-5 ml-2">
               <a
-                href="#"
+                href="http://facebook.com/AaronGuckianForLtGovernor/mentions/?_rdr"
+                target="_blank"
                 className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="Facebook"
               >
                 <img src={fb} className="w-14 h-14" />
               </a>
               <a
-                href="#"
+                href="https://x.com/GuckianRI"
+                target="_blank"
                 className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="X (Twitter)"
               >
@@ -72,13 +74,13 @@ export function Navbar() {
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="Instagram"
               >
                 <img src={insta} className="w-14 h-14" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

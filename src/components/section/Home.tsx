@@ -14,17 +14,17 @@ export default function Home() {
     <main className="py-5">
       <div className="hidden lg:flex lg:flex-row">
         {/* Left Content Section */}
-        <div className="w-1/3 pl-6 xl:pl-14 lg:py-16">
-          <p className="text-xl xl:text-3xl font-bold font-lufga uppercase text-brown mb-6">
+        <div className="w-1/3 pl-6 xl:pl-14 lg:py-28">
+          {/* <p className="text-xl xl:text-3xl font-bold font-lufga uppercase text-brown mb-6">
             A NEW COURSE FOR THE OCEAN STATE
-          </p>
+          </p> */}
 
-          <h1 className="pb-10 text-5xl xl:text-[68px] font-semibold">
-            <span className="block text-brown tracking-wider leading-tight">
-              Rhode Island
+          <h1 className="pb-10 font-semibold">
+            <span className="block text-[45px] 2xl:text-[60px]  text-brown leading-tight">
+              Rhode Island...
             </span>
-            <span className="block text-blue leading-tight">
-              Rises Together
+            <span className="block text-[45px] 2xl:text-[55px] text-nowrap text-blue leading-tight">
+              It's time to THINK BIG
             </span>
           </h1>
 
@@ -35,10 +35,10 @@ export default function Home() {
             JOIN THE MOVEMENT
           </CommonButton>
 
-          <p className="text-brown text-4xl font-lufga pt-12">
+          {/* <p className="text-brown text-4xl font-lufga pt-12">
             Modern leadership. Local focus. Real results for every Rhode
             Islander.
-          </p>
+          </p> */}
         </div>
 
         {/* Right Image Section - Layered Images */}
@@ -68,16 +68,16 @@ export default function Home() {
       <div className="lg:hidden flex flex-col min-h-screen text-center">
         {/* Top Content Section */}
         <div className="px-6 pt-8 pb-5">
-          <p className="font-bold font-lufga uppercase text-brown mb-4">
+          {/* <p className="font-bold font-lufga uppercase text-brown mb-4">
             A NEW COURSE FOR THE OCEAN STATE
-          </p>
+          </p> */}
 
           <h1>
-            <span className="block text-[47px] font-bold text-brown leading-tight">
-              Rhode Island
+            <span className="block text-[40px] md:text-[60px] font-bold text-brown leading-tight">
+              Rhode Island...
             </span>
-            <span className="block text-[47px] font-bold text-blue leading-tight">
-              Rises Together
+            <span className="block text-[40px] md:text-[60px] font-bold text-blue leading-tight">
+              It's time to THINK BIG
             </span>
           </h1>
         </div>
@@ -105,10 +105,10 @@ export default function Home() {
 
         {/* Bottom Content Section */}
         <div className="px-6 py-8">
-          <p className="text-brown text-xl leading-relaxed mb-6">
+          {/* <p className="text-brown text-xl leading-relaxed mb-6">
             Modern leadership. Local focus. Real results for every Rhode
             Islander.
-          </p>
+          </p> */}
 
           <CommonButton
             onClick={() => setCurrModal("join-movement")}
