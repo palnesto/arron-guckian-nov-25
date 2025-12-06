@@ -37,7 +37,7 @@ export function Footer() {
         {/* Social Media Icons */}
         <div className="flex gap-6">
           <a
-            href="https://www.facebook.com/AaronGuckianForLtGovernor"
+            href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
             target="_blank"
             className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Facebook"
@@ -105,7 +105,7 @@ export function Footer() {
         {/* Social Media Icons */}
         <div className="flex justify-center gap-6">
           <a
-            href="https://www.facebook.com/AaronGuckianForLtGovernor"
+            href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
             target="_blank"
             className="h-20 w-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Facebook"

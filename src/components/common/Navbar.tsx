@@ -48,7 +48,7 @@ export function Navbar() {
             {/* Social Media Icons - Desktop Only */}
             <div className="hidden lg:flex items-center gap-5 ml-2">
               <a
-                href="https://www.facebook.com/AaronGuckianForLtGovernor"
+                href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
                 target="_blank"
                 className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="Facebook"
