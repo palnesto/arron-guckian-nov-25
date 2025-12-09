@@ -63,7 +63,7 @@ export function Navbar() {
               showArrow={false}
               className="w-full px-3 lg:px-5 py-7 2xl:py-9 xl:text-2xl"
             >
-              THE STORE
+              STORE
             </CommonButton>
           </a>
 
@@ -173,7 +173,7 @@ export function Navbar() {
                 showArrow={false}
                 className="w-full py-3 text-base font-semibold"
               >
-                THE STORE
+                STORE
               </CommonButton>
             </a>
             <div className="flex items-center justify-center gap-5">
