@@ -136,7 +136,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0, x: 0 }}
             exit={{ opacity: 0, y: -8, x: 20 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="lg:hidden absolute right-4 top-full mt-3 max-w-xs w-[260px] rounded-md border border-brown/30 bg-white shadow-2xl px-3 py-4 flex flex-col gap-3"
+            className="lg:hidden absolute right-4 top-full max-w-xs w-[260px] rounded-3xl border border-brown/30 bg-white shadow-2xl px-3 py-4 flex flex-col gap-3"
           >
             <a
               href={donateHref}
@@ -176,6 +176,30 @@ export function Navbar() {
                 THE STORE
               </CommonButton>
             </a>
+            <div className="flex items-center justify-center gap-5">
+              <a
+                href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
+                target="_blank"
+                className="w-16 h-16 rounded-full bg-brown/5 border border-brown/20 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                aria-label="Facebook"
+              >
+                <img src={fb} />
+              </a>
+              <a
+                href="https://x.com/GuckianRI"
+                target="_blank"
+                className="w-16 h-16 rounded-full bg-brown/5 border border-brown/20 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                aria-label="X (Twitter)"
+              >
+                <svg
+                  className="w-10 h-10 text-brown"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
