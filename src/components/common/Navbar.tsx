@@ -17,9 +17,9 @@ export function Navbar() {
     "https://secure.winred.com/friends-of-aaron-guckian-0394772f/storefront/";
 
   return (
-    <nav className="sticky top-0 z-50 left-0 right-0 shadow-sm w-auto">
+    <nav className="top-0 z-50 left-0 right-0 shadow-sm w-full bg-white relative">
       {/* TOP BAR */}
-      <div className="px-1 lg:p-7 xl:px-16 flex items-center justify-between h-32 lg:h-56">
+      <div className="px-4 md:p-7 xl:px-16 flex items-center justify-between h-32 lg:h-56">
         {/* Logo */}
         <div className="h-28 lg:h-48">
           <img
@@ -96,12 +96,11 @@ export function Navbar() {
 
         {/* Mobile Hamburger (Right side) */}
         <button
-          className="lg:hidden w-12 h-12 rounded-full border border-brown/10 flex items-center justify-center"
+          className="lg:hidden w-12 h-12 rounded-full shadow-2xl border border-brown/20 flex items-center justify-center"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
           {open ? (
-            // X icon
             <svg
               className="w-6 h-6 text-brown"
               viewBox="0 0 24 24"
@@ -113,7 +112,6 @@ export function Navbar() {
               <path d="M6 6l12 12" strokeLinecap="round" />
             </svg>
           ) : (
-            // Hamburger icon
             <svg
               className="w-7 h-7 text-brown"
               viewBox="0 0 24 24"
@@ -129,59 +127,56 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* SHEET-STYLE MOBILE MENU (below navbar, right aligned) */}
-      {/* SHEET-STYLE MOBILE MENU (below navbar, right aligned) */}
+      {/* SHEET-STYLE MOBILE MENU (floating, right aligned) */}
       <AnimatePresence>
         {open && (
-          <div className="lg:hidden flex justify-end px-1 lg:px-16">
-            <motion.div
-              key="mobile-menu"
-              initial={{ opacity: 0, y: -8, x: 20 }}
-              animate={{ opacity: 1, y: 0, x: 0 }}
-              exit={{ opacity: 0, y: -8, x: 20 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
-              className="mt-2 w-full max-w-xs rounded-md border border-brown/10 shadow-2xl px-3 py-4 flex flex-col gap-3"
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -8, x: 20 }}
+            animate={{ opacity: 1, y: 0, x: 0 }}
+            exit={{ opacity: 0, y: -8, x: 20 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="lg:hidden absolute right-4 top-full mt-3 max-w-xs w-[260px] rounded-md border border-brown/30 bg-white shadow-2xl px-3 py-4 flex flex-col gap-3"
+          >
+            <a
+              href={donateHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
             >
-              <a
-                href={donateHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-              >
-                <CommonButton
-                  showArrow={false}
-                  className="w-full py-3 text-base font-semibold"
-                >
-                  DONATE NOW
-                </CommonButton>
-              </a>
-
               <CommonButton
                 showArrow={false}
-                onClick={() => {
-                  setCurrModal("join-movement");
-                  setOpen(false);
-                }}
                 className="w-full py-3 text-base font-semibold"
               >
-                JOIN THE MOVEMENT
+                DONATE NOW
               </CommonButton>
+            </a>
 
-              <a
-                href={store}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
+            <CommonButton
+              showArrow={false}
+              onClick={() => {
+                setCurrModal("join-movement");
+                setOpen(false);
+              }}
+              className="w-full py-3 text-base font-semibold"
+            >
+              JOIN THE MOVEMENT
+            </CommonButton>
+
+            <a
+              href={store}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+            >
+              <CommonButton
+                showArrow={false}
+                className="w-full py-3 text-base font-semibold"
               >
-                <CommonButton
-                  showArrow={false}
-                  className="w-full py-3 text-base font-semibold"
-                >
-                  THE STORE
-                </CommonButton>
-              </a>
-            </motion.div>
-          </div>
+                THE STORE
+              </CommonButton>
+            </a>
+          </motion.div>
         )}
       </AnimatePresence>
     </nav>
