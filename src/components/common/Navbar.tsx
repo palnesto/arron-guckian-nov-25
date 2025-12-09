@@ -19,9 +19,9 @@ export function Navbar() {
   return (
     <nav className="top-0 z-50 left-0 right-0 shadow-sm w-full bg-white relative">
       {/* TOP BAR */}
-      <div className="px-4 md:p-7 xl:px-16 flex items-center justify-between h-32 lg:h-56">
+      <div className="px-4 md:p-7 2xl:px-16 flex items-center justify-between h-32 lg:h-56">
         {/* Logo */}
-        <div className="h-28 lg:h-48">
+        <div className="h-28 lg:h-36 xl:h-48">
           <img
             src={logo}
             alt="Aaron Guckian for Governor"
@@ -39,7 +39,7 @@ export function Navbar() {
           >
             <CommonButton
               showArrow={false}
-              className="w-full px-3 lg:px-5 py-7 2xl:py-9 text-lg 2xl:text-2xl"
+              className="w-full px-3 lg:px-5 py-7 2xl:py-9 xl:text-2xl"
             >
               DONATE NOW
             </CommonButton>
@@ -48,7 +48,7 @@ export function Navbar() {
           <CommonButton
             showArrow={false}
             onClick={() => setCurrModal("join-movement")}
-            className="w-full px-3 lg:px-5 py-7 2xl:py-9 text-lg 2xl:text-2xl"
+            className="w-full px-3 lg:px-5 py-7 2xl:py-9 xl:text-2xl"
           >
             JOIN THE MOVEMENT
           </CommonButton>
@@ -61,7 +61,7 @@ export function Navbar() {
           >
             <CommonButton
               showArrow={false}
-              className="w-full px-3 lg:px-5 py-7 2xl:py-9 text-lg 2xl:text-2xl"
+              className="w-full px-3 lg:px-5 py-7 2xl:py-9 xl:text-2xl"
             >
               THE STORE
             </CommonButton>
@@ -72,15 +72,15 @@ export function Navbar() {
             <a
               href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
               target="_blank"
-              className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="w-16 h-16 xl:w-20 xl:h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
               aria-label="Facebook"
             >
-              <img src={fb} className="w-14 h-14" />
+              <img src={fb} className="xl:w-14 xl:h-14" />
             </a>
             <a
               href="https://x.com/GuckianRI"
               target="_blank"
-              className="w-20 h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="w-16 h-16 xl:w-20 xl:h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
               aria-label="X (Twitter)"
             >
               <svg
