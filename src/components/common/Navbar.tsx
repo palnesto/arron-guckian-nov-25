@@ -21,7 +21,7 @@ export function Navbar() {
       {/* TOP BAR */}
       <div className="px-4 md:p-7 2xl:px-16 flex items-center justify-between h-32 lg:h-56">
         {/* Logo */}
-        <div className="h-28 lg:h-36 xl:h-48">
+        <div className="h-28 lg:h-32 xl:h-40">
           <img
             src={logo}
             alt="Aaron Guckian for Governor"
@@ -29,17 +29,29 @@ export function Navbar() {
           />
         </div>
 
-        {/* Desktop Right Section */}
-        <div className="hidden lg:flex flex-col lg:flex-row items-center gap-2 lg:gap-4">
+        <div className="hidden lg:flex flex-col lg:flex-row items-center gap-2 lg:gap-3">
+          <a
+            href="https://app.xpoll.io/campaigns/all-campaigns/696f81a002950ad67fc5cfd9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full"
+          >
+            <CommonButton
+              showArrow={false}
+              className="w-full px-3 lg:px-4 py-5 xl:py-7 text-sm xl:text-xl"
+            >
+              VOTE ON XPOLL
+            </CommonButton>
+          </a>
           <a
             href={donateHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="lg:py-7 w-full"
+            className="w-full"
           >
             <CommonButton
               showArrow={false}
-              className="w-full px-3 lg:px-5 py-7 2xl:py-9 xl:text-2xl"
+              className="w-full px-3 lg:px-4 py-5 xl:py-7 text-sm xl:text-xl"
             >
               DONATE NOW
             </CommonButton>
@@ -48,7 +60,7 @@ export function Navbar() {
           <CommonButton
             showArrow={false}
             onClick={() => setCurrModal("join-movement")}
-            className="w-full px-3 lg:px-5 py-7 2xl:py-9 xl:text-2xl"
+            className="w-full px-3 lg:px-4 py-5 xl:py-7 text-sm xl:text-xl"
           >
             JOIN THE MOVEMENT
           </CommonButton>
@@ -57,11 +69,11 @@ export function Navbar() {
             href={store}
             target="_blank"
             rel="noopener noreferrer"
-            className="lg:py-7 w-full"
+            className="w-full"
           >
             <CommonButton
               showArrow={false}
-              className="w-full px-3 lg:px-5 py-7 2xl:py-9 xl:text-2xl"
+              className="w-full px-3 lg:px-4 py-5 xl:py-7 text-sm xl:text-xl"
             >
               STORE
             </CommonButton>
@@ -75,16 +87,16 @@ export function Navbar() {
               className="w-16 h-16 xl:w-20 xl:h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
               aria-label="Facebook"
             >
-              <img src={fb} className="xl:w-14 xl:h-14" />
+              <img src={fb} className="xl:w-20 xl:h-20" />
             </a>
             <a
               href="https://x.com/GuckianRI"
               target="_blank"
-              className="w-16 h-16 xl:w-20 xl:h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="w-12 h-12 xl:w-20 xl:h-20 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
               aria-label="X (Twitter)"
             >
               <svg
-                className="w-10 h-10 text-brown"
+                className="w-8 h-8 text-brown"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -139,6 +151,20 @@ export function Navbar() {
             className="lg:hidden absolute right-4 top-full max-w-xs w-[260px] rounded-3xl border border-brown/30 bg-white shadow-2xl px-3 py-4 flex flex-col gap-3"
           >
             <a
+              href="https://app.xpoll.io/campaigns/all-campaigns/696f81a002950ad67fc5cfd9"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+            >
+              <CommonButton
+                showArrow={false}
+                className="w-full py-3 font-semibold"
+              >
+                VOTE ON XPOLL
+              </CommonButton>
+            </a>
+
+            <a
               href={donateHref}
               target="_blank"
               rel="noopener noreferrer"
@@ -146,7 +172,7 @@ export function Navbar() {
             >
               <CommonButton
                 showArrow={false}
-                className="w-full py-3 text-base font-semibold"
+                className="w-full py-3 font-semibold"
               >
                 DONATE NOW
               </CommonButton>

@@ -30,15 +30,20 @@ export default function Home() {
 
           <CommonButton
             onClick={() => setCurrModal("join-movement")}
-            className="text-2xl font-medium py-10 px-14"
+            className="text-2xl font-medium py-10 px-14 mb-2"
           >
             JOIN THE MOVEMENT
           </CommonButton>
-
-          {/* <p className="text-brown text-4xl font-lufga pt-12">
-            Modern leadership. Local focus. Real results for every Rhode
-            Islander.
-          </p> */}
+          <a
+            href="https://app.xpoll.io/campaigns/all-campaigns/696f81a002950ad67fc5cfd9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full"
+          >
+            <CommonButton className="text-2xl font-medium py-10 px-14 uppercase">
+              Vote on xpoll
+            </CommonButton>
+          </a>
         </div>
 
         {/* Right Image Section - Layered Images */}
@@ -66,12 +71,7 @@ export default function Home() {
 
       {/* Mobile Layout */}
       <div className="lg:hidden flex flex-col min-h-screen text-center">
-        {/* Top Content Section */}
         <div className="px-6 pt-8 pb-5">
-          {/* <p className="font-bold font-lufga uppercase text-brown mb-4">
-            A NEW COURSE FOR THE OCEAN STATE
-          </p> */}
-
           <h1>
             <span className="block text-[40px] md:text-[60px] font-bold text-brown leading-tight">
               Rhode Island...
@@ -82,9 +82,7 @@ export default function Home() {
           </h1>
         </div>
 
-        {/* Middle Layered Images Section */}
         <div className="relative flex-1 min-h-[300px] overflow-hidden">
-          {/* Background lighthouse image */}
           <div className="absolute inset-0 pl-3">
             <img
               src={bg}
@@ -93,7 +91,6 @@ export default function Home() {
             />
           </div>
 
-          {/* Foreground man cutout */}
           <div className="absolute inset-0 flex items-end justify-start -ml-5">
             <img
               src={governor}
@@ -103,19 +100,23 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom Content Section */}
-        <div className="px-6 py-8">
-          {/* <p className="text-brown text-xl leading-relaxed mb-6">
-            Modern leadership. Local focus. Real results for every Rhode
-            Islander.
-          </p> */}
-
+        <div className="px-6 pt-8 space-y-2">
           <CommonButton
             onClick={() => setCurrModal("join-movement")}
-            className="text-xl"
+            className="text-xl mb-2"
           >
             JOIN THE MOVEMENT
           </CommonButton>
+          <a
+            href="https://app.xpoll.io/campaigns/all-campaigns/696f81a002950ad67fc5cfd9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full"
+          >
+            <CommonButton className="text-xl uppercase">
+              Vote on xpoll
+            </CommonButton>
+          </a>
         </div>
       </div>
     </main>
