@@ -28,7 +28,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden xl:flex flex-col xl:flex-row items-center gap-2 xl:gap-3">
-          <a
+          {/* <a
             href="https://medium.com/@aaron_85789/rhode-island-works-smarter-a-big-reset-for-a-state-thats-ready-to-move-forward-6b368a83b6ce"
             target="_blank"
             rel="noopener noreferrer"
@@ -53,7 +53,7 @@ export function Navbar() {
             >
               VOTE ON XPOLL
             </CommonButton>
-          </a>
+          </a> */}
           <a
             href={donateHref}
             target="_blank"
@@ -161,7 +161,7 @@ export function Navbar() {
             transition={{ duration: 0.22, ease: "easeOut" }}
             className="xl:hidden absolute right-4 top-full max-w-xs w-[260px] rounded-3xl border border-brown/30 bg-white shadow-2xl px-3 py-4 flex flex-col gap-3"
           >
-            <a
+            {/* <a
               href="https://medium.com/@aaron_85789/rhode-island-works-smarter-a-big-reset-for-a-state-thats-ready-to-move-forward-6b368a83b6ce"
               target="_blank"
               rel="noopener noreferrer"
@@ -186,7 +186,7 @@ export function Navbar() {
               >
                 VOTE ON XPOLL
               </CommonButton>
-            </a>
+            </a> */}
 
             <a
               href={donateHref}
