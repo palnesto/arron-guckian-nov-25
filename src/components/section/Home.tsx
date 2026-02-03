@@ -34,7 +34,7 @@ export default function Home() {
           >
             JOIN THE MOVEMENT
           </CommonButton>
-          <a
+          {/* <a
             href="https://app.xpoll.io/campaigns/all-campaigns/696f81a002950ad67fc5cfd9"
             target="_blank"
             rel="noopener noreferrer"
@@ -43,7 +43,7 @@ export default function Home() {
             <CommonButton className="text-2xl font-medium py-10 px-14 uppercase">
               Vote on xpoll
             </CommonButton>
-          </a>
+          </a> */}
         </div>
 
         {/* Right Image Section - Layered Images */}
@@ -107,7 +107,7 @@ export default function Home() {
           >
             JOIN THE MOVEMENT
           </CommonButton>
-          <a
+          {/* <a
             href="https://app.xpoll.io/campaigns/all-campaigns/696f81a002950ad67fc5cfd9"
             target="_blank"
             rel="noopener noreferrer"
@@ -116,7 +116,7 @@ export default function Home() {
             <CommonButton className="text-xl uppercase">
               Vote on xpoll
             </CommonButton>
-          </a>
+          </a> */}
         </div>
       </div>
     </main>
