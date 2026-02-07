@@ -178,41 +178,16 @@ export function Navbar() {
             transition={{ duration: 0.22, ease: "easeOut" }}
             className="xl:hidden absolute right-4 top-full max-w-xs w-[260px] rounded-3xl border border-brown/30 bg-white shadow-2xl px-3 py-4 flex flex-col gap-3"
           >
-            {/* <a
-              href="https://medium.com/@aaron_85789/rhode-island-works-smarter-a-big-reset-for-a-state-thats-ready-to-move-forward-6b368a83b6ce"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
+            <CommonButton
+              showArrow={false}
+              onClick={() => {
+                setOpen(false);
+                navigate("/blogs");
+              }}
+              className="w-full py-3 font-semibold uppercase"
             >
-              <CommonButton
-                showArrow={false}
-                className="w-full py-3 font-semibold uppercase"
-              >
-                Aaron's Smarter Plan 
-              </CommonButton>
-            </a>
-            <a
-              href="https://app.xpoll.io/campaigns/all-campaigns/696f81a002950ad67fc5cfd9"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-            >
-              <CommonButton
-                showArrow={false}
-                className="w-full py-3 font-semibold"
-              >
-                VOTE ON XPOLL
-              </CommonButton>
-            </a> */}
-            <Link to="/blogs" className="w-full" onClick={() => setOpen(false)}>
-              <CommonButton
-                showArrow={false}
-                className="w-full py-3 font-semibold uppercase"
-              >
-                Aaron’s Smarter Plan
-              </CommonButton>
-            </Link>
-
+              Aaron’s Smarter Plan
+            </CommonButton>
             <a
               href={donateHref}
               target="_blank"
