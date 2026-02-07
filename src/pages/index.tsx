@@ -3,7 +3,6 @@ import { NewEra } from "../components/section/NewEra";
 import newera from "../assets/newera.png";
 import sign from "../assets/sign.png";
 import MeetAaron from "../components/section/MeetAaron";
-import Get from "../components/section/Get";
 import { Support } from "../components/section/Donation";
 import { FivePillars } from "../components/section/FivePillars";
 
@@ -15,7 +14,6 @@ const Main = () => {
       <Support />
       <MeetAaron />
       <FivePillars />
-      <Get />
     </section>
   );
 };

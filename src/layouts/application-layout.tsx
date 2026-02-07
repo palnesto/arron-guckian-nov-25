@@ -34,7 +34,8 @@ import { Navbar } from "../components/common/Navbar";
 import SignUpNowModal from "../components/modal/SignUpNowModal";
 import JoinMovementModal from "../components/modal/JoinMovementModal";
 import { useModal } from "../store/modals";
-import successImage from "../assets/success.png"; // 👈 moved here
+import successImage from "../assets/success.png";
+import Get from "../components/section/Get";
 
 export function ApplicationLayout({ children }: { children: ReactNode }) {
   const { currModal, closeModal, isImageModalOpen, closeImgModal } = useModal();
@@ -68,6 +69,7 @@ export function ApplicationLayout({ children }: { children: ReactNode }) {
           <Navbar />
         </header>
         {children}
+        <Get />
         <Footer />
       </MaxWidthContainer>
     </main>

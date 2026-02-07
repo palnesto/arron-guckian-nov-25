@@ -19,13 +19,13 @@ export function Navbar() {
   return (
     <nav className="top-0 z-50 left-0 right-0 shadow-sm w-full bg-white relative">
       <div className="px-4 md:px-7 flex items-center justify-between h-32 xl:h-56">
-        <div className="h-28 xl:h-32 2xl:h-40">
+        <a href="/" className="h-28 xl:h-32 2xl:h-40">
           <img
             src={logo}
             alt="Aaron Guckian for Governor"
             className="h-full w-full"
           />
-        </div>
+        </a>
 
         <div className="hidden xl:flex flex-col xl:flex-row items-center gap-2 xl:gap-3">
           {/* <a
@@ -54,6 +54,14 @@ export function Navbar() {
               VOTE ON XPOLL
             </CommonButton>
           </a> */}
+          <a href="/blogs" className="w-full">
+            <CommonButton
+              showArrow={false}
+              className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg"
+            >
+              BLOGS
+            </CommonButton>
+          </a>
           <a
             href={donateHref}
             target="_blank"
@@ -187,7 +195,14 @@ export function Navbar() {
                 VOTE ON XPOLL
               </CommonButton>
             </a> */}
-
+            <a href="/blogs" className="w-full">
+              <CommonButton
+                showArrow={false}
+                className="w-full py-3 font-semibold"
+              >
+                BLOGS
+              </CommonButton>
+            </a>
             <a
               href={donateHref}
               target="_blank"
@@ -208,7 +223,7 @@ export function Navbar() {
                 setCurrModal("join-movement");
                 setOpen(false);
               }}
-              className="w-full py-3 text-base font-semibold"
+              className="w-full py-3 font-semibold"
             >
               JOIN THE MOVEMENT
             </CommonButton>
