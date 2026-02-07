@@ -5,7 +5,7 @@ import fb from "../../assets/fb.png";
 import { CommonButton } from "./CommonButton";
 import logo from "../../assets/logo.png";
 import { useModal } from "../../store/modals";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Navbar() {
   const { setCurrModal } = useModal();
@@ -62,6 +62,14 @@ export function Navbar() {
           >
             Aaron’s Smarter Plan
           </CommonButton>
+          <Link to="/blogs" className="w-full" onClick={() => setOpen(false)}>
+            <CommonButton
+              showArrow={false}
+              className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg uppercase"
+            >
+              Aaron’s Smarter Plan
+            </CommonButton>
+          </Link>
 
           <a
             href={donateHref}
@@ -180,7 +188,7 @@ export function Navbar() {
                 showArrow={false}
                 className="w-full py-3 font-semibold uppercase"
               >
-                Aaron's Smarter Plan
+                Aaron's Smarter Plan 
               </CommonButton>
             </a>
             <a
@@ -196,16 +204,15 @@ export function Navbar() {
                 VOTE ON XPOLL
               </CommonButton>
             </a> */}
-            <CommonButton
-              showArrow={false}
-              onClick={() => {
-                navigate("/blogs");
-                setOpen(false);
-              }}
-              className="w-full py-3 font-semibold uppercase"
-            >
-              Aaron’s Smarter Plan
-            </CommonButton>
+            <Link to="/blogs" className="w-full" onClick={() => setOpen(false)}>
+              <CommonButton
+                showArrow={false}
+                className="w-full py-3 font-semibold uppercase"
+              >
+                Aaron’s Smarter Plan
+              </CommonButton>
+            </Link>
+
             <a
               href={donateHref}
               target="_blank"
