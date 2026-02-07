@@ -28,9 +28,9 @@ export default function ArticleUIExact() {
             >
               <ArrowLeft className="h-7 w-7" />
             </a>
-            <CommonButton showArrow={false} className="rounded-lg">
+            {/* <CommonButton showArrow={false} className="rounded-lg">
               Public Policy &amp; Governance
-            </CommonButton>
+            </CommonButton> */}
           </motion.div>
 
           <motion.h1
@@ -47,7 +47,7 @@ export default function ArticleUIExact() {
             transition={{ duration: 0.45, delay: 0.1 }}
             className="mt-4 flex items-center gap-2 text-lg text-neutral-600"
           >
-            <motion.div
+            {/* <motion.div
               variants={fadeUp}
               transition={{ duration: 0.5, delay: 0.14 }}
               className="overflow-hidden rounded-full h-7 w-7"
@@ -59,7 +59,7 @@ export default function ArticleUIExact() {
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.45, ease: "easeOut" }}
               />
-            </motion.div>
+            </motion.div> */}
             <div className="flex flex-wrap items-center gap-x-2">
               <span className="text-xl font-medium text-neutral-800">
                 Aaron Guckian
