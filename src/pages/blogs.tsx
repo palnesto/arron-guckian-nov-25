@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { CommonButton } from "../components/common/CommonButton";
 import { ArrowLeft } from "lucide-react";
-import bottom from "../assets/newera.png";
 import blog from "@/assets/blog.png";
 const fadeUp = {
   hidden: { opacity: 0, y: 14 },
@@ -214,18 +212,6 @@ export default function ArticleUIExact() {
             <p>That&apos;s not leadership. That&apos;s a warning sign.</p>
           </div>
         </div>
-
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 0.5, delay: 0.02 }}
-          className="overflow-hidden rounded-xl h-80 md:h-[30rem]"
-        >
-          <img
-            src={bottom}
-            alt="Rhode Island"
-            className="w-full h-full object-cover object-top"
-          />
-        </motion.div>
       </motion.div>
 
       <motion.div

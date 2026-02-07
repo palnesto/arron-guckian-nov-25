@@ -58,9 +58,9 @@ export function Navbar() {
           <CommonButton
             showArrow={false}
             onClick={() => navigate("/blogs")}
-            className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg"
+            className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg uppercase"
           >
-            BLOGS
+            Aaron’s Smarter Plan
           </CommonButton>
 
           <a
@@ -202,9 +202,9 @@ export function Navbar() {
                 navigate("/blogs");
                 setOpen(false);
               }}
-              className="w-full py-3 font-semibold"
+              className="w-full py-3 font-semibold uppercase"
             >
-              BLOGS
+              Aaron’s Smarter Plan
             </CommonButton>
             <a
               href={donateHref}
