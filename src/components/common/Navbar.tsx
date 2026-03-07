@@ -55,19 +55,13 @@ export function Navbar() {
               VOTE ON XPOLL
             </CommonButton>
           </a> */}
-          <CommonButton
-            showArrow={false}
-            onClick={() => navigate("/blogs")}
-            className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg uppercase"
-          >
-            Aaron’s Smarter Plan
-          </CommonButton>
+
           <Link to="/blogs" className="w-full" onClick={() => setOpen(false)}>
             <CommonButton
               showArrow={false}
               className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg uppercase"
             >
-              Aaron’s Smarter Plan
+              AARON’S WORK SMARTER PLAN
             </CommonButton>
           </Link>
 
@@ -186,7 +180,7 @@ export function Navbar() {
               }}
               className="w-full py-3 font-semibold uppercase"
             >
-              Aaron’s Smarter Plan
+              AARON’S WORK SMARTER PLAN
             </CommonButton>
             <a
               href={donateHref}
