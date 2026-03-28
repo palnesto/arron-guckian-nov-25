@@ -6,7 +6,7 @@ import m21 from "../../assets/marquee/m26.jpg";
 import m20 from "../../assets/marquee/m3.png";
 import m19 from "../../assets/marquee/m1.jpeg";
 import m18 from "../../assets/marquee/m8.jpg";
-import m17 from "../../assets/marquee/m23.jpeg";
+import m17 from "../../assets/marquee/m27.jpeg";
 import m16 from "../../assets/marquee/m2.png";
 
 const GALLERY: { src: string; fileName: string; alt: string }[] = [
