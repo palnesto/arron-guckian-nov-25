@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-brown text-white">
       {/* Mobile Layout */}
-      <div className="lg:hidden flex flex-col items-center text-center gap-8 py-12 text-lg">
+      <div className="lg:hidden flex flex-col items-center text-center gap-8 py-12 text-lg font-lufga font-medium">
         {/* Logo */}
         <figure>
           <img
@@ -69,16 +69,22 @@ export function Footer() {
         </div>
 
         {/* Footer Text */}
-        <div className="space-y-4 p-2">
-          <p className=" border-2 border-white rounded-full font-lufga p-4 font-medium">
+        <section className="space-y-4 bg-white px-6 py-8 text-xl">
+          <p className="text-brown">
             Paid for and approved by the friends of Aaron Guckian.
           </p>
-          <p className="text-base">Copyright © 2025</p>
-        </div>
+          <p className="text-brown/50">All content on this website is authorized by the campaign.</p>
+        </section>
+        <section className="flex flex-col gap-2 text-white/60">
+          <p>Privacy Policy</p>
+          <p>Data & Privacy Policy</p>
+          <p>Terms of use</p>
+        </section>
+        <p>Copyright © 2026</p>
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden lg:flex flex-col items-center gap-10 px-12 py-10 text-4xl">
+      <div className="hidden lg:flex flex-col items-center gap-10 p-10 text-4xl font-lufga font-medium">
         <figure className="w-96">
           <img src={logo} alt="Aaron" className="w-full h-full" />
         </figure>
@@ -137,12 +143,20 @@ export function Footer() {
         </div>
 
         {/* Footer Text */}
-        <div className="text-center space-y-2">
-          <p className="border-2 border-white p-4 rounded-full font-lufga font-medium text-2xl">
+        <section className="flex flex-col items-center space-y-4 bg-white px-6 py-8 rounded-xl w-full max-w-2xl 2xl:max-w-3xl">
+          <p className="text-brown text-xl 2xl:text-2xl">
             Paid for and approved by the friends of Aaron Guckian.
           </p>
-          <p className="text-2xl">Copyright © 2025</p>
-        </div>
+          <p className="text-brown/50 text-base 2xl:text-xl">All content on this website is authorized by the campaign.</p>
+        </section>
+        <section className="flex justify-between items-center text-base 2xl:text-lg w-full max-w-2xl 2xl:max-w-3xl">
+          <p>Copyright © 2026</p>
+          <section className="flex gap-4 text-white/60">
+            <p>Privacy Policy</p>
+            <p>Data & Privacy Policy</p>
+            <p>Terms of use</p>
+          </section>
+        </section>
       </div>
     </footer>
   );

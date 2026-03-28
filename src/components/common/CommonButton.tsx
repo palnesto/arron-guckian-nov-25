@@ -43,30 +43,39 @@ import { Button } from "../ui/button";
 import { cn } from "../../lib/utils";
 
 interface CampaignButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "asChild"> {
   children: React.ReactNode;
   fullWidth?: boolean;
   showArrow?: boolean;
+  asChild?: boolean;
 }
 
 export function CommonButton({
   children,
   fullWidth = false,
   showArrow = true,
+  asChild = false,
   className,
   ...props
 }: CampaignButtonProps) {
   return (
     <Button
-      {...props} // ← this forwards onClick, onMouseEnter, onMouseLeave, etc.
+      asChild={asChild}
+      {...props}
       className={cn(
         "bg-brown hover:bg-brown/90 text-white font-semibold px-8 py-6 rounded-full text-base",
         fullWidth && "w-full",
         className
       )}
     >
-      {children}
-      {showArrow && <MoveRight className="ml-2 h-5 w-5" />}
+      {asChild ? (
+        children
+      ) : (
+        <>
+          {children}
+          {showArrow && <MoveRight className="ml-2 h-5 w-5" />}
+        </>
+      )}
     </Button>
   );
 }

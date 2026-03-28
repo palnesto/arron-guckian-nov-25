@@ -5,6 +5,8 @@ import sign from "../assets/sign.png";
 import MeetAaron from "../components/section/MeetAaron";
 import { Support } from "../components/section/Donation";
 import { FivePillars } from "../components/section/FivePillars";
+import Get from "../components/section/Get";
+import GroundGallery from "../components/section/GroundGallery";
 
 const Main = () => {
   return (
@@ -14,6 +16,8 @@ const Main = () => {
       <Support />
       <MeetAaron />
       <FivePillars />
+      <Get />
+      <GroundGallery />
     </section>
   );
 };

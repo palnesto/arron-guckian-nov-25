@@ -69,7 +69,6 @@ export function ApplicationLayout({ children }: { children: ReactNode }) {
           <Navbar />
         </header>
         {children}
-        <Get />
         <Footer />
       </MaxWidthContainer>
     </main>

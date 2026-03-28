@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import fb from "../../assets/fb.png";
@@ -17,9 +17,29 @@ export function Navbar() {
   const store =
     "https://secure.winred.com/friends-of-aaron-guckian-0394772f/storefront/";
 
+  const [socialsOpen, setSocialsOpen] = useState(false);
+  const socialsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!socialsOpen) return;
+    const handle = (e: MouseEvent) => {
+      if (
+        socialsRef.current &&
+        !socialsRef.current.contains(e.target as Node)
+      ) {
+        setSocialsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handle);
+    return () => document.removeEventListener("mousedown", handle);
+  }, [socialsOpen]);
+
+  const navLinkClass =
+    "text-brown uppercase text-xs md:text-lg 2xl:text-lg font-semibold tracking-wide hover:opacity-80 transition-opacity whitespace-nowrap";
+
   return (
     <nav className="top-0 z-50 left-0 right-0 shadow-sm w-full bg-white relative">
-      <div className="px-4 md:px-7 flex items-center justify-between h-32 xl:h-56">
+      <div className="px-4 md:px-7 flex items-center justify-between h-32 xl:h-40">
         <a href="/" className="h-28 xl:h-32 2xl:h-40">
           <img
             src={logo}
@@ -28,104 +48,103 @@ export function Navbar() {
           />
         </a>
 
-        <div className="hidden xl:flex flex-col xl:flex-row items-center gap-2 xl:gap-3">
-          {/* <a
-            href="https://medium.com/@aaron_85789/rhode-island-works-smarter-a-big-reset-for-a-state-thats-ready-to-move-forward-6b368a83b6ce"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full"
-          >
-            <CommonButton
-              showArrow={false}
-              className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg uppercase"
-            >
-              Aaron's Smarter Plan
-            </CommonButton>
-          </a>
-          <a
-            href="https://app.xpoll.io/campaigns/all-campaigns/696f81a002950ad67fc5cfd9"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full"
-          >
-            <CommonButton
-              showArrow={false}
-              className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg"
-            >
-              VOTE ON XPOLL
-            </CommonButton>
-          </a> */}
-
-          <Link to="/blogs" className="w-full" onClick={() => setOpen(false)}>
-            <CommonButton
-              showArrow={false}
-              className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg uppercase"
+        <div className="hidden xl:flex flex-1 items-center justify-end gap-6 2xl:gap-10 min-w-0">
+          <nav className="flex items-center gap-4 xl:gap-5 2xl:gap-6 min-w-0">
+            <Link
+              to="/blogs"
+              className={navLinkClass}
+              onClick={() => setOpen(false)}
             >
               AARON’S WORK SMARTER PLAN
-            </CommonButton>
-          </Link>
+            </Link>
 
-          <a
-            href={donateHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full"
-          >
-            <CommonButton
-              showArrow={false}
-              className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg"
+            <button
+              type="button"
+              onClick={() => setCurrModal("join-movement")}
+              className={navLinkClass}
             >
-              DONATE NOW
-            </CommonButton>
-          </a>
+              JOIN THE MOVEMENT
+            </button>
 
-          <CommonButton
-            showArrow={false}
-            onClick={() => setCurrModal("join-movement")}
-            className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg"
-          >
-            JOIN THE MOVEMENT
-          </CommonButton>
-
-          <a
-            href={store}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full"
-          >
-            <CommonButton
-              showArrow={false}
-              className="w-full px-3 xl:px-4 py-5 xl:py-7 text-sm 2xl:text-lg"
+            <a
+              href={store}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={navLinkClass}
             >
               STORE
-            </CommonButton>
-          </a>
+            </a>
 
-          {/* Social Media Icons - Desktop Only */}
-          <div className="hidden xl:flex items-center gap-5 ml-2">
-            <a
-              href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
-              target="_blank"
-              className="w-16 h-16 xl:w-16 xl:h-16 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
-              aria-label="Facebook"
-            >
-              <img src={fb} className="xl:w-16 xl:h-16" />
-            </a>
-            <a
-              href="https://x.com/GuckianRI"
-              target="_blank"
-              className="w-12 h-12 xl:w-14 xl:h-14 rounded-full bg-brown/5 border border-brown/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
-              aria-label="X (Twitter)"
-            >
-              <svg
-                className="w-8 h-8 text-brown"
-                viewBox="0 0 24 24"
-                fill="currentColor"
+            <div className="relative shrink-0" ref={socialsRef}>
+              <button
+                type="button"
+                onClick={() => setSocialsOpen((v) => !v)}
+                className={`${navLinkClass} inline-flex items-center gap-1`}
+                aria-expanded={socialsOpen}
+                aria-haspopup="true"
               >
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
+                SOCIALS
+                <svg
+                  className="h-3 w-3 text-brown shrink-0"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path d="M6 8L1 3h10L6 8z" />
+                </svg>
+              </button>
+              {socialsOpen && (
+                <div
+                  className="absolute right-0 top-full z-[60] mt-2 min-w-[200px] rounded-xl border border-brown/20 bg-white py-2 shadow-lg"
+                  role="menu"
+                >
+                  <a
+                    href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-brown hover:bg-brown/5"
+                    role="menuitem"
+                    onClick={() => setSocialsOpen(false)}
+                  >
+                    <img src={fb} alt="" className="h-6 w-6" />
+                    Facebook
+                  </a>
+                  <a
+                    href="https://x.com/GuckianRI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-brown hover:bg-brown/5"
+                    role="menuitem"
+                    onClick={() => setSocialsOpen(false)}
+                  >
+                    <svg
+                      className="h-5 w-5 text-brown shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden
+                    >
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    Twitter
+                  </a>
+                </div>
+              )}
+            </div>
+          </nav>
+
+          <CommonButton
+            asChild
+            showArrow={false}
+            className="shrink-0 px-6 py-3 text-xs uppercase xl:text-sm 2xl:text-base"
+          >
+            <a
+              href={donateHref}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DONATE NOW
             </a>
-          </div>
+          </CommonButton>
         </div>
 
         {/* Mobile Hamburger (Right side) */}
@@ -178,7 +197,7 @@ export function Navbar() {
                 setOpen(false);
                 navigate("/blogs");
               }}
-              className="w-full py-3 font-semibold uppercase"
+              className="w-full py-3 font-semibold uppercase text-xs md:text-sm"
             >
               AARON’S WORK SMARTER PLAN
             </CommonButton>
@@ -190,7 +209,7 @@ export function Navbar() {
             >
               <CommonButton
                 showArrow={false}
-                className="w-full py-3 font-semibold"
+                className="w-full py-3 font-semibold text-xs md:text-sm"
               >
                 DONATE NOW
               </CommonButton>
@@ -202,7 +221,7 @@ export function Navbar() {
                 setCurrModal("join-movement");
                 setOpen(false);
               }}
-              className="w-full py-3 font-semibold"
+              className="w-full py-3 font-semibold text-xs md:text-sm"
             >
               JOIN THE MOVEMENT
             </CommonButton>
@@ -215,7 +234,7 @@ export function Navbar() {
             >
               <CommonButton
                 showArrow={false}
-                className="w-full py-3 text-base font-semibold"
+                className="w-full py-3 font-semibold text-xs md:text-sm"
               >
                 STORE
               </CommonButton>
