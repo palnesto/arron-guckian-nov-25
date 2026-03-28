@@ -73,7 +73,7 @@ export default function VisitPopup() {
               aria-hidden
             />
 
-            <div className="relative z-10 px-8 pb-10 pt-12 text-center sm:px-10 sm:pb-12 sm:pt-14">
+            <div className="relative z-20 px-8 pb-10 pt-12 text-center sm:px-10 sm:pb-12 sm:pt-14">
               <button
                 type="button"
                 onClick={dismiss}
