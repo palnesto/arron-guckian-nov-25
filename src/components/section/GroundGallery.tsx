@@ -2,12 +2,12 @@ import { useCallback, useEffect, useState } from "react";
 import { Download, X } from "lucide-react";
 import flag from "../../assets/flag.png"
 import m22 from "../../assets/marquee/m22.jpeg";
-import m21 from "../../assets/marquee/m21.jpeg";
-import m20 from "../../assets/marquee/m20.jpeg";
-import m19 from "../../assets/marquee/m19.jpg";
-import m18 from "../../assets/marquee/m18.jpg";
-import m17 from "../../assets/marquee/m17.jpg";
-import m16 from "../../assets/marquee/m16.jpg";
+import m21 from "../../assets/marquee/m26.jpg";
+import m20 from "../../assets/marquee/m3.png";
+import m19 from "../../assets/marquee/m1.jpeg";
+import m18 from "../../assets/marquee/m8.jpg";
+import m17 from "../../assets/marquee/m23.jpeg";
+import m16 from "../../assets/marquee/m2.png";
 
 const GALLERY: { src: string; fileName: string; alt: string }[] = [
   { src: m22, fileName: "m22.jpeg", alt: "Campaign event — Attorney General office" },
@@ -46,9 +46,9 @@ const BePart = () => {
           href={DONATE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-1 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-normal uppercase text-brown transition-opacity hover:opacity-90 md:text-base"
+          className="mt-1 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold uppercase text-brown transition-opacity hover:opacity-90 md:text-base"
         >
-          Contribute today
+          DONATE NOW
         </a>
       </div> 
   </section>

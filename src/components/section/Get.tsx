@@ -27,20 +27,20 @@ export default function Get({
               className="absolute inset-0 bg-[#6B0D17E0]"
               aria-hidden
             />
-            <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-12 text-center md:gap-5 md:py-16">
-              <h2 className="font-lufga font-bold text-white text-4xl lg:text-6xl xl:text-7xl">
+            <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-12 text-center md:gap-5 md:py-16">
+              <h2 className="font-lufga font-bold text-white text-6xl xl:text-7xl">
               Ready to make a Difference?
               </h2>
-              <p className="max-w-2xl text-base text-white/80 md:text-2xl xl:text-4xl">
+              <p className="max-w-4xl text-base text-white/80 md:text-2xl xl:text-4xl">
               Your contribution - any amount - puts us one step closer to the change Rhode Island needs.
               </p>
               <a
                 href={DONATE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-normal uppercase text-brown transition-opacity hover:opacity-90 md:text-base"
+                className="mt-1 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold uppercase text-brown transition-opacity hover:opacity-90 md:text-base"
               >
-                Contribute today
+                DONATE NOW
               </a>
             </div>
           </div>

@@ -49,7 +49,7 @@ export function Navbar() {
         </a>
 
         <div className="hidden xl:flex flex-1 items-center justify-end gap-6 2xl:gap-10 min-w-0">
-          <nav className="flex items-center gap-4 xl:gap-5 2xl:gap-6 min-w-0">
+          <nav className="flex items-center gap-4 xl:gap-7 min-w-0">
             <Link
               to="/blogs"
               className={navLinkClass}
@@ -74,68 +74,12 @@ export function Navbar() {
             >
               STORE
             </a>
-
-            <div className="relative shrink-0" ref={socialsRef}>
-              <button
-                type="button"
-                onClick={() => setSocialsOpen((v) => !v)}
-                className={`${navLinkClass} inline-flex items-center gap-1`}
-                aria-expanded={socialsOpen}
-                aria-haspopup="true"
-              >
-                SOCIALS
-                <svg
-                  className="h-3 w-3 text-brown shrink-0"
-                  viewBox="0 0 12 12"
-                  fill="currentColor"
-                  aria-hidden
-                >
-                  <path d="M6 8L1 3h10L6 8z" />
-                </svg>
-              </button>
-              {socialsOpen && (
-                <div
-                  className="absolute right-0 top-full z-[60] mt-2 min-w-[200px] rounded-xl border border-brown/20 bg-white py-2 shadow-lg"
-                  role="menu"
-                >
-                  <a
-                    href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-brown hover:bg-brown/5"
-                    role="menuitem"
-                    onClick={() => setSocialsOpen(false)}
-                  >
-                    <img src={fb} alt="" className="h-6 w-6" />
-                    Facebook
-                  </a>
-                  <a
-                    href="https://x.com/GuckianRI"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-brown hover:bg-brown/5"
-                    role="menuitem"
-                    onClick={() => setSocialsOpen(false)}
-                  >
-                    <svg
-                      className="h-5 w-5 text-brown shrink-0"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden
-                    >
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                    Twitter
-                  </a>
-                </div>
-              )}
-            </div>
           </nav>
 
           <CommonButton
             asChild
             showArrow={false}
-            className="shrink-0 px-6 py-3 text-xs uppercase xl:text-sm 2xl:text-base"
+            className="shrink-0 px-6 py-6 text-xs uppercase xl:text-xl 2xl:text-2xl"
           >
             <a
               href={donateHref}

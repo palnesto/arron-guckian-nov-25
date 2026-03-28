@@ -55,7 +55,7 @@ export default function Home() {
           <h1 className="text-4xl text-[#701018] lg:text-6xl 2xl:text-8xl">
             Rhode Island...
           </h1>
-          <h2 className="my-3 text-4xl text-blue lg:text-6xl 2xl:text-8xl">
+          <h2 className="mt-3 mb-6 text-4xl text-blue lg:text-6xl 2xl:text-8xl">
             It&apos;s time to Think big
           </h2>
 
@@ -77,7 +77,7 @@ export default function Home() {
           />
 
           <div
-            className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[min(52%,380px)] bg-gradient-to-r from-white via-white/90 to-transparent xl:w-[min(42%,300px)]"
+            className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[min(52%,380px)] bg-gradient-to-r from-white via-white/70 to-transparent xl:w-[min(32%,300px)]"
             aria-hidden
           />
 
