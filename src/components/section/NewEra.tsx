@@ -17,6 +17,7 @@ export function NewEra({
             muted
             loop
             playsInline
+            controls
             aria-label={videoAlt}
           />
         </figure>
