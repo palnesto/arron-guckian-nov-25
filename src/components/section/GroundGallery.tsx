@@ -9,6 +9,7 @@ import m18 from "../../assets/marquee/m8.jpg";
 import m17 from "../../assets/marquee/m27.jpeg";
 import m16 from "../../assets/marquee/m2.png";
 
+
 const GALLERY: { src: string; fileName: string; alt: string }[] = [
   { src: m22, fileName: "m22.jpeg", alt: "Campaign event — Attorney General office" },
   { src: m21, fileName: "m21.jpeg", alt: "Campaign photo" },
