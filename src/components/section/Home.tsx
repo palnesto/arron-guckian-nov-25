@@ -6,8 +6,26 @@ import { useModal } from "../../store/modals";
 const DONATE_URL =
   "https://secure.winred.com/friends-of-aaron-guckian-0394772f/donate";
 
+function QuoteCard({ onJoin }: { onJoin: () => void }) {
+  return (
+    <div className="w-full rounded-2xl bg-[#701018] px-6 py-6 text-center shadow-xl xl:px-8 xl:py-7">
+      <p className="font-lufga text-base font-medium leading-snug text-white xl:text-lg">
+        Rhode Island deserves leadership that works smarter, not harder.
+      </p>
+      <CommonButton
+        onClick={onJoin}
+        showArrow
+        className="mt-5 w-full !bg-white !text-[#701018] hover:!bg-white/95 xl:mt-6"
+      >
+        JOIN THE MOVEMENT
+      </CommonButton>
+    </div>
+  );
+}
+
 export default function Home() {
   const { setCurrModal } = useModal();
+  const openJoin = () => setCurrModal("join-movement");
 
   return (
     <main className="pb-5 mt-20">
@@ -25,7 +43,7 @@ export default function Home() {
 
           <section className="flex items-center gap-4">
             <CommonButton
-              onClick={() => setCurrModal("join-movement")}
+              onClick={openJoin}
               className="px-4 py-6 font-semibold xl:px-10 xl:py-7 xl:text-xl"
             >
               JOIN THE MOVEMENT
@@ -45,8 +63,8 @@ export default function Home() {
           </section>
         </div>
 
-        {/* Right — lighthouse, blend gradient, governor, card */}
-        <div className="relative flex-1 overflow-hidden h-[400px] lg:min-h-[min(88vh,820px)]">
+        {/* Right — lighthouse, blend, governor above centered card (card overlaps lower torso) */}
+        <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden lg:min-h-[min(88vh,820px)]">
           <img
             src={bg}
             alt=""
@@ -54,32 +72,21 @@ export default function Home() {
             aria-hidden
           />
 
-          {/* White → transparent so the photo meets the left column smoothly */}
           <div
             className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[min(52%,380px)] bg-gradient-to-r from-white via-white/90 to-transparent xl:w-[min(48%,440px)]"
             aria-hidden
           />
 
-          <div className="pointer-events-none absolute inset-0 z-[2] flex items-end justify-center">
-            <img
-              src={governor}
-              alt="Aaron Guckian"
-              className="h-[min(90%,min(78vh,720px))] w-auto max-w-[min(100%,520px)] object-contain object-bottom"
-            />
-          </div>
-
-          <div className="absolute bottom-6 left-4 right-4 z-[3] mx-auto max-w-lg xl:bottom-10 xl:left-auto xl:right-10 xl:mx-0 xl:max-w-md">
-            <div className="rounded-2xl bg-[#701018] px-6 py-6 text-center shadow-xl xl:px-8 xl:py-7">
-              <p className="font-lufga text-base font-medium leading-snug text-white xl:text-lg">
-                Rhode Island deserves leadership that works smarter, not harder.
-              </p>
-              <CommonButton
-                onClick={() => setCurrModal("join-movement")}
-                showArrow
-                className="mt-5 w-full !bg-white !text-[#701018] hover:!bg-white/95 xl:mt-6"
-              >
-                JOIN THE MOVEMENT
-              </CommonButton>
+          <div className="relative z-[2] flex min-h-[min(88vh,680px)] flex-1 flex-col items-center justify-end px-4 pb-8 lg:pb-10">
+            <div className="flex w-full max-w-lg flex-col items-center xl:max-w-md">
+              <img
+                src={governor}
+                alt="Aaron Guckian"
+                className="relative z-[2] h-auto w-auto max-h-[min(38vh,320px)] max-w-[min(100%,440px)] object-contain object-bottom lg:max-h-[min(40vh,360px)] xl:max-h-[min(42vh,380px)]"
+              />
+              <div className="relative z-[3] -mt-10 w-full sm:-mt-12 lg:-mt-14">
+                <QuoteCard onJoin={openJoin} />
+              </div>
             </div>
           </div>
         </div>
@@ -93,32 +100,34 @@ export default function Home() {
               Rhode Island...
             </span>
             <span className="block text-[40px] md:text-[60px] font-bold text-blue leading-tight">
-              It's time to THINK BIG
+              It&apos;s time to THINK BIG
             </span>
           </h1>
         </div>
 
-        <div className="relative flex-1 min-h-[300px] overflow-hidden">
-          <div className="absolute inset-0 pl-3">
-            <img
-              src={bg}
-              alt="Lighthouse background"
-              className="w-full h-full"
-            />
-          </div>
+        <div className="relative flex min-h-[380px] flex-col overflow-hidden md:min-h-[420px]">
+          <img
+            src={bg}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            aria-hidden
+          />
 
-          <div className="absolute inset-0 flex items-end justify-start -ml-5">
+          <div className="relative z-[1] flex flex-1 flex-col items-center px-4 pb-6 pt-8">
             <img
               src={governor}
-              alt="Political candidate"
-              className="h-full w-auto object-bottom"
+              alt="Aaron Guckian"
+              className="relative z-[2] max-h-[220px] w-auto shrink-0 object-contain object-bottom sm:max-h-[260px] md:max-h-[280px]"
             />
+            <div className="relative z-[3] mt-4 w-full max-w-none">
+              <QuoteCard onJoin={openJoin} />
+            </div>
           </div>
         </div>
 
-        <div className="px-6 pt-8 space-y-2">
+        <div className="space-y-2 px-6 pt-8">
           <CommonButton
-            onClick={() => setCurrModal("join-movement")}
+            onClick={openJoin}
             className="text-xl mb-2"
           >
             JOIN THE MOVEMENT

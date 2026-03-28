@@ -1,5 +1,8 @@
+import { useEffect, useRef } from "react";
 import pillar from "../../assets/pillar.png";
 import p from "../../assets/p.png";
+import { FIVE_PILLAR_QUARTER_STORAGE_KEY } from "../modal/FivePillarQuarterModal";
+import { useModal } from "../../store/modals";
 const PILLARS = [
   {
     badge: p,
@@ -29,8 +32,45 @@ const PILLARS = [
 ];
 
 export function FivePillars() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const setFivePillarModalOpen = useModal((s) => s.setFivePillarModalOpen);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    let dismissed = false;
+    try {
+      dismissed = sessionStorage.getItem(FIVE_PILLAR_QUARTER_STORAGE_KEY) === "1";
+    } catch {
+      /* ignore */
+    }
+    if (dismissed) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const hit = entries.some((e) => e.isIntersecting);
+        if (!hit) return;
+        try {
+          if (sessionStorage.getItem(FIVE_PILLAR_QUARTER_STORAGE_KEY) === "1") {
+            observer.disconnect();
+            return;
+          }
+        } catch {
+          /* ignore */
+        }
+        setFivePillarModalOpen(true);
+        observer.disconnect();
+      },
+      { threshold: 0.22, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [setFivePillarModalOpen]);
+
   return (
-    <section className="bg-white text-black py-12">
+    <section ref={sectionRef} className="bg-white text-black py-12">
       <div className="mx-auto max-w-full grid gap-10 lg:gap-32 lg:grid-cols-[1.1fr,2fr] px-4 xl:px-10 2xl:px-32 ">
         {/* LEFT: Pillar + big 5 */}
         <div className="flex flex-col items-center space-y-2">
