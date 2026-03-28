@@ -32,7 +32,7 @@ export function Support() {
   };
   return (
     <section>
-      <section className="my-12 w-full px-4 xl:px-0">
+      <section className="my-12 w-full px-4 xl:px-0 max-w-7xl mx-auto">
         <div className="flex w-full flex-col gap-3 md:h-auto md:flex-row md:gap-4">
           <figure className="h-56 w-full min-h-0 md:h-auto md:flex-1">
             <img

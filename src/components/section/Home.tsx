@@ -51,7 +51,7 @@ export default function Home() {
     <main className="pb-5 lg:mt-20">
       <div className="hidden h-[500px] lg:h-[min(92vh,880px)] w-full md:flex md:flex-row">
         {/* Left — solid white + headline + CTAs */}
-        <div className="relative z-10 flex min-w-0 flex-col justify-center bg-white pb-8 pl-6 pr-4 font-lufga font-bold uppercase leading-[1.05] w-[45%] py-40 xl:w-[50%] xl:px-14 xl:py-24">
+        <div className="relative z-10 flex min-w-0 flex-col justify-center bg-white pb-8 pl-6 pr-4 font-lufga font-bold uppercase leading-[1.05] w-[45%] py-40 xl:w-[50%] xl:px-14 xl:pt-24">
           <h1 className="text-4xl text-[#701018] lg:text-6xl 2xl:text-8xl">
             Rhode Island...
           </h1>
