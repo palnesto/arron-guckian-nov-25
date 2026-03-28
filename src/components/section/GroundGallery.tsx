@@ -12,12 +12,12 @@ import m16 from "../../assets/marquee/m2.png";
 
 const GALLERY: { src: string; fileName: string; alt: string }[] = [
   { src: m22, fileName: "m22.jpeg", alt: "Campaign event — Attorney General office" },
-  { src: m21, fileName: "m21.jpeg", alt: "Campaign photo" },
-  { src: m20, fileName: "m20.jpeg", alt: "Campaign photo" },
-  { src: m19, fileName: "m19.jpg", alt: "Campaign photo" },
-  { src: m18, fileName: "m18.jpg", alt: "Campaign photo" },
-  { src: m17, fileName: "m17.jpg", alt: "Campaign photo" },
-  { src: m16, fileName: "m16.jpg", alt: "Campaign photo" },
+  { src: m21, fileName: "m26.jpg", alt: "Campaign photo" },
+  { src: m20, fileName: "m3.png", alt: "Campaign photo" },
+  { src: m19, fileName: "m1.jpeg", alt: "Campaign photo" },
+  { src: m18, fileName: "m8.jpg", alt: "Campaign photo" },
+  { src: m17, fileName: "m27.jpeg", alt: "Campaign photo" },
+  { src: m16, fileName: "m2.png", alt: "Campaign photo" },
 ];
 
 const DONATE_URL =
@@ -36,7 +36,7 @@ const BePart = () => {
         className="absolute inset-0 bg-[#6B0D17E0]"
         aria-hidden
       />
-      <div className="relative z-10 mx-auto flex max-w-8xl flex-col items-center gap-4 px-6 py-12 text-center md:gap-5 md:py-16">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 py-12 text-center md:gap-5 md:py-16">
         <h2 className="font-lufga font-bold text-white text-4xl lg:text-6xl xl:text-7xl">
         Ready to make a Difference?
         </h2>
