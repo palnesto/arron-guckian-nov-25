@@ -205,7 +205,7 @@ export default function MeetAaron({ images = defaultImages }) {
 }
 
 /** Single column that loops images vertically by duplicating the stack */
-function MarqueeColumn({ images, direction = "up", speed = 10 }) {
+function MarqueeColumn({ images, direction = "up", speed = 30 }) {
   // duplicate images to make a seamless loop
   const stack = [...images, ...images];
   return (

@@ -137,11 +137,6 @@ export function FivePillars() {
         </b>
         <br />
         Guckian said.
-        <br />
-        <b>
-          “A future where our economy is booming, schools thrive, our
-          communities are safe, and our government finally delivers results.”
-        </b>
       </section>
     </section>
   );

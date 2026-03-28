@@ -1,6 +1,8 @@
 import support from "../../assets/support.png";
 import msupport from "../../assets/msupport.png";
-import flag from "../../assets/flag.png"
+import flag from "../../assets/flag.png";
+import fly from "../../assets/fly.jpg";
+import fly2 from "../../assets/flyer.jpg";
 interface DonationButtonProps {
   amount: string;
   onClick?: () => void;
@@ -30,6 +32,24 @@ export function Support() {
   };
   return (
     <section>
+      <section className="my-12 w-full px-4 xl:px-0">
+        <div className="flex w-full flex-col gap-3 md:h-auto md:flex-row md:gap-4">
+          <figure className="h-56 w-full min-h-0 md:h-auto md:flex-1">
+            <img
+              src={fly}
+              alt=""
+              className="h-full w-full object-cover md:h-auto md:min-h-[220px]"
+            />
+          </figure>
+          <figure className="h-56 w-full min-h-0 md:h-auto md:flex-1">
+            <img
+              src={fly2}
+              alt=""
+              className="h-full w-full object-cover md:h-auto md:min-h-[220px]"
+            />
+          </figure>
+        </div>
+      </section>
       <section className="my-12 px-4 xl:px-0">
         <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden rounded-2xl xl:rounded-none lg:min-h-[360px] 2xl:min-h-[400px]">
           <img
@@ -55,7 +75,7 @@ export function Support() {
               rel="noopener noreferrer"
               className="mt-1 inline-flex items-center justify-center rounded-full bg-brown px-8 py-3.5 text-sm font-normal uppercase tracking-wide text-white transition-opacity hover:opacity-90 md:text-base"
             >
-              Contribute today
+              DONATE NOW
             </a>
           </div>
         </div>

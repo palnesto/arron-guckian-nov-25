@@ -1,20 +1,23 @@
-// src/components/sections/NewEra.tsx
+import neweraVideo from "../../assets/newera.mp4";
+
 export function NewEra({
-  photoSrc,
-  photoAlt = "Providence skyline",
+  videoAlt = "Rhode Island campaign video",
   signatureSrc = "/images/signature.png",
   signatureAlt = "Signature",
   className = "",
 }) {
   return (
     <section className={`py-12 md:py-16 ${className}`}>
-      <div className="flex flex-col lg:flex-row gap-10 items-start">
-        {/* Left: photo */}
-        <figure className="w-full lg:w-1/2 pr-2 lg:pr-0">
-          <img
-            src={photoSrc}
-            alt={photoAlt}
-            className="w-full h-full object-cover"
+      <div className="flex flex-col gap-10 items-start lg:flex-row">
+        <figure className="w-full pr-2 lg:w-1/2 lg:pr-0">
+          <video
+            src={neweraVideo}
+            className="h-full min-h-[200px] w-full object-cover md:min-h-0"
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-label={videoAlt}
           />
         </figure>
 
