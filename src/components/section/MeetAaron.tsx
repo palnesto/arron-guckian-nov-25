@@ -4,9 +4,6 @@ import m3 from "../../assets/marquee/m3.png";
 import m4 from "../../assets/marquee/m4.jpeg";
 import m5 from "../../assets/marquee/m5.png";
 import m6 from "../../assets/marquee/m6.png";
-// import m7 from "../../assets/marquee/m17.jpg";
-// import m8 from "../../assets/marquee/m8.jpeg";
-// import m9 from "../../assets/marquee/m9.jpeg";
 import m10 from "../../assets/marquee/m10.png";
 import m11 from "../../assets/marquee/m11.jpg";
 import m12 from "../../assets/marquee/m12.jpg";
@@ -22,10 +19,7 @@ import m21 from "../../assets/marquee/m21.jpeg";
 import m22 from "../../assets/marquee/m22.jpeg";
 import { CommonButton } from "../common/CommonButton";
 import governor from "../../assets/governor.png";
-import { useState } from "react";
-// import m23 from "../../assets/marquee/m23.jpeg";
-// import m24 from "../../assets/marquee/m2";
-// import m25 from "../../assets/marquee/m25.jpeg";
+import { useState } from "react"; 
 
 export default function MeetAaron({ images = defaultImages }) {
   const [openPopup, setOpenPopup] = useState<null | "about" | "why">(null);

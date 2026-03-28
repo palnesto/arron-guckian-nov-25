@@ -34,18 +34,18 @@ export function Support() {
     <section>
       <section className="my-12 w-full px-4 xl:px-0 max-w-7xl mx-auto">
         <div className="flex w-full flex-col gap-3 md:h-auto md:flex-row md:gap-4">
-          <figure className="h-56 w-full min-h-0 md:h-auto md:flex-1">
+          <figure className="h-96 w-full md:h-auto md:flex-1">
             <img
               src={fly}
               alt=""
-              className="h-full w-full object-cover md:h-auto md:min-h-[220px]"
+              className="h-full w-full object-contain md:object-cover md:h-auto md:min-h-[220px]"
             />
           </figure>
-          <figure className="h-56 w-full min-h-0 md:h-auto md:flex-1">
+          <figure className="h-96 w-full min-h-0 md:h-auto md:flex-1">
             <img
               src={fly2}
               alt=""
-              className="h-full w-full object-cover md:h-auto md:min-h-[220px]"
+              className="h-full w-full object-contain md:object-cover md:h-auto md:min-h-[220px]"
             />
           </figure>
         </div>
