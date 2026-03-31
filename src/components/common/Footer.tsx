@@ -76,7 +76,7 @@ export function Footer() {
           <p className="text-brown/50">All content on this website is authorized by the campaign.</p>
         </section>
         <section className="flex flex-col gap-2 text-white/60">
-          <p>Privacy Policy</p>
+          <a href="/privacy-policy" className="cursor-pointer hover:text-white transition-colors hover:scale-100">Privacy Policy</a>
           <p>Data & Privacy Policy</p>
           <p>Terms of use</p>
         </section>
@@ -152,7 +152,7 @@ export function Footer() {
         <section className="flex justify-between items-center text-base 2xl:text-lg w-full max-w-2xl 2xl:max-w-3xl">
           <p>Copyright © 2026</p>
           <section className="flex gap-4 text-white/60">
-            <p>Privacy Policy</p>
+            <a href="/privacy-policy" className="cursor-pointer hover:text-white transition-transform hover:scale-105 duration-1000">Privacy Policy</a>
             <p>Data & Privacy Policy</p>
             <p>Terms of use</p>
           </section>
