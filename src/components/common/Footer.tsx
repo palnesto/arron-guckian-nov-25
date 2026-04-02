@@ -77,8 +77,7 @@ export function Footer() {
         </section>
         <section className="flex flex-col gap-2 text-white/60">
           <a href="/privacy-policy" className="cursor-pointer hover:text-white transition-colors hover:scale-100">Privacy Policy</a>
-          <p>Data & Privacy Policy</p>
-          <p>Terms of use</p>
+          <a href="/terms-of-use" className="cursor-pointer hover:text-white transition-colors hover:scale-100">Terms of use</a>
         </section>
         <p>Copyright © 2026</p>
       </div>
