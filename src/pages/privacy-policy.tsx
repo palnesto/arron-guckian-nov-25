@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
           <p className="pt-4 text-lg font-bold text-neutral-900 sm:text-xl">
             AaronForRI.com
           </p>
-          <p className="pt-1 text-lg font-bold text-neutral-900 sm:text-xl">
+          <p className="text-lg font-bold text-neutral-900 sm:text-xl">
             Effective Date: January 1, 2026
           </p>
         </header>
