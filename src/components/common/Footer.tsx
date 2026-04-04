@@ -1,4 +1,4 @@
-import { Facebook } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import logo from "../../assets/logow.png";
 export function Footer() {
   return (
@@ -37,7 +37,7 @@ export function Footer() {
         {/* Social Media Icons */}
         <div className="flex gap-6">
           <a
-            href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
+            href="https://www.facebook.com/AaronGuckianForGovernor"
             target="_blank"
             className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Facebook"
@@ -59,13 +59,22 @@ export function Footer() {
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </a>
-          {/* <a
-            href="#"
+          <a
+            href="https://www.instagram.com/aaronguckian?igsh=Z2JveHJlbmE5NTV0&utm_source=qr"
+            target="_blank"
             className="h-14 w-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Instagram"
           >
             <Instagram className="h-8 w-8" />
-          </a> */}
+          </a>
+          <a
+            href="https://www.linkedin.com/in/aaronguckian/"
+            target="_blank"
+            className="h-14 w-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
+            aria-label="Instagram"
+          >
+            <Linkedin className="w-8 h-8" />
+          </a>
         </div>
 
         {/* Footer Text */}
@@ -110,7 +119,7 @@ export function Footer() {
         {/* Social Media Icons */}
         <div className="flex justify-center gap-6">
           <a
-            href="https://www.facebook.com/share/1F9GRLggZz/?mibextid=wwXIfr"
+            href="https://www.facebook.com/AaronGuckianForGovernor"
             target="_blank"
             className="h-20 w-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Facebook"
@@ -132,13 +141,22 @@ export function Footer() {
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </a>
-          {/* <a
-            href="#"
+          <a
+            href="https://www.instagram.com/aaronguckian?igsh=Z2JveHJlbmE5NTV0&utm_source=qr"
+            target="_blank"
             className="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Instagram"
           >
             <Instagram className="w-10 h-10" />
-          </a> */}
+          </a>
+          <a
+            href="https://www.linkedin.com/in/aaronguckian/"
+            target="_blank"
+            className="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gray-50 transition-colors"
+            aria-label="Instagram"
+          >
+            <Linkedin className="w-10 h-10" />
+          </a>
         </div>
 
         {/* Footer Text */}
