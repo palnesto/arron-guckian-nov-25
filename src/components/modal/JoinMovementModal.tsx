@@ -131,7 +131,7 @@ export default function JoinMovementModal({
 
           <div className="flex flex-col gap-2">
             <Label htmlFor="phone" className="text-lg">
-              Phone
+              Cell Phone
             </Label>
             <Input id="phone" placeholder="+1" {...register("phone")} />
           </div>
@@ -146,7 +146,7 @@ export default function JoinMovementModal({
 
         {/* Volunteer Interest checkboxes */}
         <div className="space-y-3">
-          <Label className="text-lg font-semibold">Check all that apply:</Label>
+          {/* <Label className="text-lg font-semibold">Check all that apply:</Label>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
             {[
               "Door to door",
@@ -168,7 +168,34 @@ export default function JoinMovementModal({
                 <span className="text-sm text-gray-700">{item}</span>
               </label>
             ))}
-          </div>
+          </div> */}
+          <section>
+            <input type="checkbox" />
+            <Label className="text-base font-semibold ml-2">
+              Yes, I want to receive text messages.
+            </Label>
+          </section>
+          <p>
+            By providing your phone number and checking the box, you are
+            consenting to receive polling and voting text messages (such as
+            election reminders and opinion polls) and public service
+            announcement text messages (such as legislative updates, member
+            updates, and voter education) from Friends of Aaron Guckian at the
+            number provided, including messages sent by autodialer. Message
+            frequency varies. Message and data rates may apply. Reply HELP for
+            help. Reply STOP to unsubscribe. See our{" "}
+            <a href="/privacy-policy" className="text-blue-500 hover:underline">
+              Privacy Policy
+            </a>{" "}
+            |{" "}
+            <a
+              href="/terms-and-conditions"
+              className="text-blue-500 hover:underline"
+            >
+              Terms and Conditions
+            </a>
+            .
+          </p>
         </div>
       </form>
     </CustomModal>

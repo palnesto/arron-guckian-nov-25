@@ -138,7 +138,7 @@ export default function SignUpNowModal({
 
           <div className="flex flex-col gap-2">
             <Label htmlFor="phone" className="text-lg">
-              Phone
+              Cell Phone
             </Label>
             <Input
               id="phone"

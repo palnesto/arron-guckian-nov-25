@@ -30,13 +30,17 @@ export default function PrivacyPolicy() {
 
             <div className="mt-4 space-y-5">
               <div>
-                <h3 className="font-bold text-neutral-900">a. Personal Information</h3>
+                <h3 className="font-bold text-neutral-900">
+                  a. Personal Information
+                </h3>
                 <ul className="mt-2 list-disc space-y-1 pl-6">
                   <li>Name</li>
                   <li>Email address</li>
                   <li>Mailing address</li>
                   <li>Phone number</li>
-                  <li>Employer and occupation (for campaign finance compliance)</li>
+                  <li>
+                    Employer and occupation (for campaign finance compliance)
+                  </li>
                   <li>
                     Payment information (processed securely via third-party
                     providers)
@@ -87,9 +91,7 @@ export default function PrivacyPolicy() {
                 Government agencies as required by law (e.g., campaign finance
                 reporting)
               </li>
-              <li>
-                Campaign partners and consultants assisting in operations
-              </li>
+              <li>Campaign partners and consultants assisting in operations</li>
             </ul>
           </section>
 
@@ -160,11 +162,18 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-lg font-bold text-neutral-900 sm:text-xl">
-              8. Third-Party Links
+              8. Third-Party Services
             </h2>
             <p className="mt-3">
-              Our Website may contain links to third-party sites. We are not
-              responsible for their privacy practices or content.
+              Text opt-in consent data will not be sold or shared with third
+              parties for promotional or marketing purposes. Except as otherwise
+              stated in this Privacy Policy, we don’t sell, trade, rent, or
+              otherwise share for marketing purposes your Personal Information
+              with third parties without your consent. Our website may contain
+              links to third-party websites or services. We are not responsible
+              for the privacy practices or content of such third parties. We
+              encourage you to review the privacy policies of those third
+              parties when accessing their websites or services.
             </p>
           </section>
 
