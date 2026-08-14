@@ -56,18 +56,18 @@ export default function Get({
             </h2>
 
             <div className="mt-6 flex flex-col gap-16 text-center md:flex-row justify-center w-full text-2xl lg:text-4xl text-[#5e0b0b]">
-              <button
+              {/* <button
                 onClick={() => setCurrModal("signup")}
                 className="rounded-full bg-white px-6 py-3 lg:py-5 lg:px-7 shadow-sm hover:shadow"
               >
                 SIGN UP NOW
-              </button>
+              </button> */}
 
               <button
                 onClick={() => setCurrModal("join-movement")}
                 className="rounded-full bg-white px-6 py-3 lg:py-5 lg:px-7 shadow-sm hover:shadow"
               >
-                JOIN THE MOVEMENT
+                STAY INFORMED
               </button>
 
               <a
