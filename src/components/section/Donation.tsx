@@ -32,7 +32,7 @@ export function Support() {
   };
   return (
     <section>
-      <section className="my-12 w-full px-4 xl:px-0 max-w-7xl mx-auto">
+      {/* <section className="my-12 w-full px-4 xl:px-0 max-w-7xl mx-auto">
         <div className="flex w-full flex-col gap-3 md:h-auto md:flex-row md:gap-4">
           <figure className="h-96 w-full md:h-auto md:flex-1">
             <img
@@ -49,7 +49,7 @@ export function Support() {
             />
           </figure>
         </div>
-      </section>
+      </section> */}
       <section className="my-12 px-4 xl:px-0">
         <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden rounded-2xl xl:rounded-none lg:min-h-[360px] 2xl:min-h-[400px]">
           <img
