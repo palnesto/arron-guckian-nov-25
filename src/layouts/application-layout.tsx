@@ -35,20 +35,12 @@ import SignUpNowModal from "../components/modal/SignUpNowModal";
 import JoinMovementModal from "../components/modal/JoinMovementModal";
 import { useModal } from "../store/modals";
 import successImage from "../assets/success.png";
-import VisitPopup from "../components/modal/VisitPopup";
-import FivePillarQuarterModal from "../components/modal/FivePillarQuarterModal";
 
 function BodyScrollLock() {
   const currModal = useModal((s) => s.currModal);
   const isImageModalOpen = useModal((s) => s.isImageModalOpen);
-  const visitPopupOpen = useModal((s) => s.visitPopupOpen);
-  const fivePillarModalOpen = useModal((s) => s.fivePillarModalOpen);
 
-  const locked =
-    currModal !== null ||
-    isImageModalOpen ||
-    visitPopupOpen ||
-    fivePillarModalOpen;
+  const locked = currModal !== null || isImageModalOpen;
 
   useEffect(() => {
     if (!locked) return;
@@ -93,9 +85,6 @@ export function ApplicationLayout({ children }: { children: ReactNode }) {
           />
         </div>
       )}
-
-      <VisitPopup />
-      <FivePillarQuarterModal />
 
       <MaxWidthContainer>
         <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
