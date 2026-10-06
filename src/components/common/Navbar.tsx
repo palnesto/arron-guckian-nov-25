@@ -55,7 +55,7 @@ export function Navbar() {
               className={navLinkClass}
               onClick={() => setOpen(false)}
             >
-              AARON’S WORK SMARTER PLAN
+              Aaron’s Strategic Initiatives
             </Link>
 
             <button
@@ -81,11 +81,7 @@ export function Navbar() {
             showArrow={false}
             className="shrink-0 px-6 py-6 text-xs uppercase xl:text-xl 2xl:text-2xl"
           >
-            <a
-              href={donateHref}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={donateHref} target="_blank" rel="noopener noreferrer">
               DONATE NOW
             </a>
           </CommonButton>
@@ -143,7 +139,7 @@ export function Navbar() {
               }}
               className="w-full py-3 font-semibold uppercase text-xs md:text-sm"
             >
-              AARON’S WORK SMARTER PLAN
+              Aaron’s Strategic Initiatives
             </CommonButton>
             <a
               href={donateHref}
